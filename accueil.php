@@ -38,8 +38,7 @@
          </center>
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-            <img width="50px" src="https://image.flaticon.com/icons/png/128/56/56763.png" alt="">
-        </div>
+            <a href="connexion.php?action=connexion.php"><?php echo ucfirst ("connexion"); ?></a><br />       
     </div>
     </fieldset>
     <nav class="links" style="--items: 5;">

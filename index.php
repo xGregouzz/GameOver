@@ -8,6 +8,9 @@
 		switch ($_GET["action"]) {
 			case "stock.php":
 				$content_for_layout ="stock.php"; 
+				break;
+			case "connexion.php":
+				$content_for_layout ="connexion.php"; 
 			default: 
 				$content_for_layout ="stock.php";
 		}
