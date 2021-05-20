@@ -38,7 +38,7 @@
          </center>
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-            <a href="connexion.php?action=connexion.php"><?php echo ucfirst ("connexion"); ?></a><br />       
+            <a href="index.php?action=connexion.php"><?php echo ucfirst ("connexion"); ?></a><br />       
     </div>
     </fieldset>
     <nav class="links" style="--items: 5;">

@@ -1,4 +1,8 @@
+<?php
+include_once("connexion.php");
+?>
 <!DOCTYPE html>
+
     <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -9,9 +13,9 @@
         
         <div class="login-form">
              <?php 
-                if(isset($_GET['login_err']))
+                if(isset($_POST['login_err']))
                 {
-                    $err = $_GET['login_err'];
+                    $err = $_POST['login_err'];
 
                     switch($err)
                     {
@@ -42,7 +46,7 @@
                 }
                 ?> 
             
-            <form action="connexion.php" method="post">
+            <form action="connexion.php" method="POST">
                 <h2 class="text-center">Connexion</h2>       
                 <div class="form-group">
                     <input type="email" name="mail" class="form-control" placeholder="Email" required="required" autocomplete="off">

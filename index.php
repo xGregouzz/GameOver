@@ -4,15 +4,17 @@
 	$db = connectToDatabase();
 	$database = recupdonnee($db);
 
-	if (isset($_GET["action"])) {
-		switch ($_GET["action"]) {
+	if (isset($_POST["action"])) {
+		switch ($_POST["action"]) {
 			case "stock.php":
 				$content_for_layout ="stock.php"; 
 				break;
 			case "connexion.php":
 				$content_for_layout ="connexion.php"; 
+				break;
 			default: 
 				$content_for_layout ="stock.php";
+				break;
 		}
 		$layout = "accueil.php";
 	} else {
