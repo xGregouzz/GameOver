@@ -38,12 +38,8 @@
          </center>
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-<<<<<<< HEAD
             <div><a href="login.php">Connexion</a></div></br>    
             <a href="register.php">S'inscrire</a>     
-=======
-            <a href="index.php?action=connexion.php"><?php echo ucfirst ("connexion"); ?></a><br />       
->>>>>>> 3dfba15b6769dccde3019cf92e0e212de560dcee
     </div>
     </fieldset>
     <nav class="links" style="--items: 5;">
@@ -54,9 +50,5 @@
     </nav>
 </header>
 
-
-<?php 
-	include($content_for_layout);
-?>	
 </body>
 </html>

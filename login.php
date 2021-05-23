@@ -7,9 +7,9 @@
 		$mdp = $_POST['mdp'];
 
 		if($mail == '')
-			$errMsg = 'Enter email';
+			$errMsg = 'Entrer votre email';
 		if($mdp == '')
-			$errMsg = 'Enter mdp';
+			$errMsg = 'Entrer votre mot de passe';
 
 		if($errMsg == '') {
 			try {
@@ -44,7 +44,7 @@
 ?>
 
 <html>
-<head><title>Login</title></head>
+<head><title>Se Connecter</title></head>
 	<style>
 	html, body {
 		margin: 1px;
@@ -59,12 +59,12 @@
 					echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 				}
 			?>
-			<div style="background-color:#006D9C; color:#FFFFFF; padding:10px;"><b>Login</b></div>
+			<div style="background-color:#006D9C; color:#FFFFFF; padding:10px;"><b>Connexion</b></div>
 			<div style="margin: 15px">
 				<form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
 					Mot De Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
-					<input type="submit" name='login' value="Login" class='submit'/><br />
+					<input type="submit" name='login' value="Se connecter" class='submit'/><br />
 				</form>
 			</div>
 		</div>

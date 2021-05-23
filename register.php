@@ -12,15 +12,15 @@
 		$mdp = $_POST['mdp'];
 
 		if($nom == '')
-			$errMsg = 'Enter un nom';
+			$errMsg = 'Entrer un nom';
 		if($prenom == '')
-			$errMsg = 'Enter un prenom';
+			$errMsg = 'Entrer un prenom';
 		if($mdp == '')
-			$errMsg = 'Enter un motde passe valide';
+			$errMsg = 'Entrer un mot de passe valide';
 		if($date_naissance == '')
-			$errMsg = 'Enter une date de naissance valide';
+			$errMsg = 'Entrer une date de naissance valide';
 		if($mdp == '')
-			$errMsg = 'Enter un mot de passe valide';
+			$errMsg = 'Entrer un mot de passe valide';
 
 		if($errMsg == ''){
 			try {
@@ -70,7 +70,7 @@
 					<input type="text" name="mail" placeholder="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" class="box" /><br/><br />
 					<input type="date" name="date_naissance" placeholder="Date de naissance" value="<?php if(isset($_POST['date_naissance'])) echo $_POST['date_naissance'] ?>" class="box" /><br/><br />
 					<input type="text" name="mdp" placeholder=" mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box"/><br /><br />
-					<input type="submit" name='register' value="Register" class='submit'/><br />
+					<input type="submit" name='register' value="S'inscrire" class='submit'/><br />
 				</form>
 			</div>
 		</div>
