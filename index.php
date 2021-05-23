@@ -1,8 +1,6 @@
 <?php 	
 
-	require_once ("database.php");
-	$db = connectToDatabase();
-	$database = recupdonnee($db);
+require 'config.php';
 
 	if (isset($_GET["action"])) {
 		switch ($_GET["action"]) {

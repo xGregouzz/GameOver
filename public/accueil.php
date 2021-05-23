@@ -38,8 +38,7 @@
          </center>
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-            <div><a href="login.php">Connexion</a></div></br>    
-            <a href="register.php">S'inscrire</a>     
+            <a href="index.php?action=public/connexion.php"><?php echo ucfirst ("connexion"); ?></a><br />       
     </div>
     </fieldset>
     <nav class="links" style="--items: 5;">
