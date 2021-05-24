@@ -39,7 +39,8 @@
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
             <a href="login.php">Connexion</a></br>    
-            <a href="register.php">S'inscrire</a>     
+            <a href="register.php">S'inscrire</a>
+            <a href="http://localhost/phpmyadmin/index.php?route=/sql&db=gameover&table=articles&pos=0">Modifier Article</a>
     </div>
     </fieldset>
     <nav class="links" style="--items: 5;">
