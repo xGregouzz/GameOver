@@ -65,11 +65,11 @@
 			<div style="background-color:#006D9C; color:#FFFFFF; padding:10px;"><b>Inscription</b></div>
 			<div style="margin: 15px">
 				<form action="" method="post">
-					<input type="text" name="nom" placeholder="nom" value="<?php if(isset($_POST['nom'])) echo $_POST['nom'] ?>" autocomplete="off" class="box"/><br /><br />
-					<input type="text" name="prenom" placeholder="prenom" value="<?php if(isset($_POST['prenom'])) echo $_POST['prenom'] ?>" autocomplete="off" class="box"/><br /><br />
-					<input type="text" name="mail" placeholder="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" class="box" /><br/><br />
+					<input type="text" name="nom" placeholder="Nom" value="<?php if(isset($_POST['nom'])) echo $_POST['nom'] ?>" autocomplete="off" class="box"/><br /><br />
+					<input type="text" name="prenom" placeholder="Prénom" value="<?php if(isset($_POST['prenom'])) echo $_POST['prenom'] ?>" autocomplete="off" class="box"/><br /><br />
+					<input type="text" name="mail" placeholder="Mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" class="box" /><br/><br />
 					<input type="date" name="date_naissance" placeholder="Date de naissance" value="<?php if(isset($_POST['date_naissance'])) echo $_POST['date_naissance'] ?>" class="box" /><br/><br />
-					<input type="text" name="mdp" placeholder=" mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box"/><br /><br />
+					<input type="password" name="mdp" placeholder="Votre mot de passe" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box"/><br /><br />
 					<input type="submit" name='register' value="S'inscrire" class='submit'/><br />
 				</form>
 			</div>
