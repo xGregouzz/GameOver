@@ -36,60 +36,54 @@
                   <h1>GameOver</h1>
             </fieldset>
          </center>
-        <div style="display: flex">
-            <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-            <a href="login.php">Connexion</a></br>    
-            <a href="register.php">S'inscrire</a>
-            <a href="http://localhost/phpmyadmin/index.php?route=/sql&db=gameover&table=articles&pos=0">Modifier Article</a>
-    </div>
+        <nav class="action">
+        <section class="categorie">
+            <ul>
+                <li><a href="login.php">Connexion</a></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li><a href="http://localhost/phpmyadmin/index.php?route=/sql&db=gameover&table=articles&pos=0">Modifier Article</a></li>
+                <li><a href="#">Rechercher</a></li>
+
+            </ul>
+        </section>
     </fieldset>
-    <!-- <nav class="links" style="--items: 5;">
-        <a href="#">Playstation</a>
-        <a href="#">Xbox</a>
-        <a href="#">Nintendo</a>
-        <a href="#">Pc</a>
-    </nav> -->
     <link href="categories.css" rel="stylesheet">
     <nav class="menu">
 		<section class="categorie">
-			<h3>Playstation</h3>
+			<h3>PlayStation</h3>
 			<ul>
-				<li><a href="#">Tagliatelle</a></li>
-				<li><a href="#">Fettuccine</a></li>
-				<li><a href="#">Lasagne</a></li>
+				<li><a href="#">PlayStation 3</a></li>
+				<li><a href="#">PlayStation 4</a></li>
+				<li><a href="#">PlayStation 5</a></li>
+                <li><a href="#">Abonnement PlayStation</a></li>
 			</ul>
 		</section>
 		<section class="categorie">
 			<h3>Xbox</h3>
 			<ul>
-				<li><a href="#">Spaghetti</a></li>
-				<li><a href="#">Spaghettoni</a></li>
-				<li><a href="#">Vermicelli</a></li>
-				<li><a href="#">Capellini</a></li>
+				<li><a href="#">Xbox 360</a></li>
+				<li><a href="#">Xbox One</a></li>
+				<li><a href="#">Xbox Series X</a></li>
+				<li><a href="#">Abonnement Xbox</a></li>
 			</ul>
 		</section>
 		<section class="categorie">
 			<h3>Nintendo</h3>
 			<ul>
-				<li><a href="#">Macaroni</a></li>
-				<li><a href="#">Cannelloni</a></li>
-				<li><a href="#">Penne</a></li>
-				<li><a href="#">Cavattapi</a></li>
+				<li><a href="#">Nintendo 3DS</a></li>
+				<li><a href="#">Nintendo Switch</a></li>
+				<li><a href="#">Abonnement Nintendo</a></li>
 			</ul>
 		</section>
 		<section class="categorie">
 			<h3>PC</h3>
 			<ul>
-				<li><a href="#">Farfalle</a></li>
-				<li><a href="#">Fusilli</a></li>
-				<li><a href="#">Ravioli</a></li>
-				<li><a href="#">Gnocchi</a></li>
-				<li><a href="#">Conchigliette</a></li>
+				<li><a href="#">Steam</a></li>
+				<li><a href="#">Epic Games</a></li>
+                <li><a href="#">Abonnement PC</a></li>
 			</ul>
 		</section>
 	</nav>
-    
 </header>
-
 </body>
 </html>
