@@ -15,25 +15,23 @@
 			try {
 				$stmt = $connect->prepare('SELECT id, nom, mdp,mail FROM Utilisateurs WHERE mail = :mail');
 				$stmt->execute(array(
-				':mail' => $mail
-					));
+					':mail' => $mail
+				));
 				$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-				if($data == false){
+				if($data == false) {
 					$errMsg = "l'utilisateur $mail n'existe pas.";
-				}
-				else {
+				} else {
 					if($mdp == $data['mdp']) {
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['mail'] = $data['mail'];
 						$_SESSION['mdp'] = $data['mdp'];
 
-
 						header('Location: accueil.php');
 						exit;
-					}
-					else
+					} else {
 						$errMsg = 'Le mot de passe ne correspond pas.';
+					}
 				}
 			}
 			catch(PDOException $e) {

@@ -38,7 +38,7 @@
          </center>
         <div style="display: flex">
             <input style="margin-right: 10px;" type="text" placeholder="Rechercher 🖊">
-            <div><a href="login.php">Connexion</a></div></br>    
+            <a href="login.php">Connexion</a></br>    
             <a href="register.php">S'inscrire</a>     
     </div>
     </fieldset>

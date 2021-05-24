@@ -42,7 +42,7 @@
 	}
 
 	if(isset($_GET['action']) && $_GET['action'] == 'joined') {
-		$errMsg = 'Utilisateur bien enregisté <a href="login.php">login</a>';
+		$errMsg = 'Utilisateur bien enregisté <a href="login.php">Connexion</a>';
 	}
 ?>
 
