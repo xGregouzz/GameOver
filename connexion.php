@@ -1,5 +1,11 @@
 <?php
 require_once('config.php');
+$admin = 'admin@gmail.com';
+if($_POST['mail'] == $admin) {
+    header('Location: accueil_admin.php'); 
+}else {
+    header('Location: accueil_membre.php');
+=======
 echo "Vous vous êtes connectés avec succès".$_SESSION['user']."!";
 
 if(isset($_POST['mail']) && isset($_POST['mdp'])) {
