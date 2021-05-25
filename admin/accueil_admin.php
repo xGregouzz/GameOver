@@ -91,15 +91,16 @@
         $articles = $req->fetchAll();
 
         foreach ($articles as $article): ?>
+        <center>
             <div class="row">
                 <div class="col s12 m7">
                     <div class="article">
                         <div class="article-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/500_x_300_Ramosmania_rodriguesii_%28Rubiaceae%29.jpg">
-                            <span class="article-title"><?= $article['nom'] ?></br></span>
+                            <br><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/500_x_300_Ramosmania_rodriguesii_%28Rubiaceae%29.jpg">
+                            <span class="article-title"><br><?= $article['nom'] ?></span>
                         </div>
                         <div class="article-description">
-                            <p><?= $article['description'] ?></p>
+                            <p><?= $article['description'] ?><br></p>
                         </div>
                     </div>
                     <div class="article-action">
@@ -107,6 +108,7 @@
                     </div>
                 </div>
             </div>
+        </center>
         <?php endforeach ?>
 </div>
 </body>
