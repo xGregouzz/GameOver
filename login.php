@@ -1,5 +1,6 @@
 <?php
 	require 'config.php';
+	$admin = 'admin@gmail.com'; 
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
@@ -26,8 +27,11 @@
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['mail'] = $data['mail'];
 						$_SESSION['mdp'] = $data['mdp'];
-
+					if($data['mail'] === $admin){	
+						header('Location: accueil_admin.php');
+					}else{
 						header('Location: accueil_membre.php');
+					}	
 						exit;
 					} else {
 						$errMsg = "L'adresse mail ou le mot de passe est incorrect.";
