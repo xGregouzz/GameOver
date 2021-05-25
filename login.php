@@ -27,7 +27,7 @@
 						$_SESSION['mail'] = $data['mail'];
 						$_SESSION['mdp'] = $data['mdp'];
 
-						header('Location: accueil.php');
+						header('Location: accueil_membre.php');
 						exit;
 					} else {
 						$errMsg = 'Le mot de passe ne correspond pas.';

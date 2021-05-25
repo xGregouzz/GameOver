@@ -39,10 +39,11 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-                <li><a href="login.php">Connexion</a></li>
-                <li><a href="register.php">Inscription</a></li>
+                <li><a href="#">Modifier Profil</a></li>
+                <li><a href="#">Se Désinscrire</a></li>
                 <li><a href="#">Rechercher</a></li>
-                
+                <li><a href="deconnexion.php">Déconnexion</a></li>
+
             </ul>
         </section>
     </fieldset>
