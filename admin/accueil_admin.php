@@ -24,6 +24,9 @@
     }
 </style>
 <body>
+<?php
+    require_once 'config.php';
+?>
 <fieldset>
 <header id="header">
     <div class="topHeader">
@@ -81,5 +84,30 @@
 		</section>
 	</nav>
 </header>
+<class="container">
+    <?php
+
+        $req = $connect->query('SELECT * FROM articles');
+        $articles = $req->fetchAll();
+
+        foreach ($articles as $article): ?>
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="article">
+                        <div class="article-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/500_x_300_Ramosmania_rodriguesii_%28Rubiaceae%29.jpg">
+                            <span class="article-title"><?= $article['nom'] ?></br></span>
+                        </div>
+                        <div class="article-description">
+                            <p><?= $article['description'] ?></p>
+                        </div>
+                    </div>
+                    <div class="article-action">
+                        <a href="#">Voir l'article en entier</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+</div>
 </body>
 </html>
