@@ -59,7 +59,6 @@
 			?>
 			<div style="background-color:#006D9C; color:#FFFFFF; padding:10px;"><b>Connexion</b></div>
 			<div style="margin: 15px">
-			<form action="connexion.php" method="post">
 			    <form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
 					Mot de Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
