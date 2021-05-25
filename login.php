@@ -23,6 +23,11 @@
 				if($data == false) {
 					$errMsg = "L'adresse mail ou le mot de passe est incorrect.";
 				} else {
+					
+					// hashage mdp
+
+					$mdp = password_verify('sha256', $mdp);
+
 					if($mdp == $data['mdp']) {
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['mail'] = $data['mail'];

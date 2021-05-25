@@ -40,6 +40,8 @@
         <section class="categorie">
             <ul>
                 <li><a href="#">Rechercher</a></li>
+                <li><a href="#">Modifier profil</a></li>
+                <li><a href="#">Se désinscrire</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
             </ul>
         </section>
