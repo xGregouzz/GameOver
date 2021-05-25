@@ -40,7 +40,7 @@
         <section class="categorie">
             <ul>
                 <li><a href="#">Rechercher</a></li>
-                <li><a href="deconnexion.php">Se déconnecter</a></li>
+                <li><a href="deconnexion.php">Déconnexion</a></li>
             </ul>
         </section>
     </fieldset>

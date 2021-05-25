@@ -42,7 +42,7 @@
                 <li><a href="#">Rechercher</a></li>
                 <li><a href="http://localhost/phpmyadmin/index.php?route=/sql&db=gameover&table=articles&pos=0">Modifier Article</a></li>
                 <li><a href="http://localhost/phpmyadmin/sql.php?server=1&db=gameover&table=articles&pos=0">Ajouter Article</a></li>
-                <li><a href="deconnexion.php">Se déconnecter</a></li>
+                <li><a href="deconnexion.php">Déconnexion</a></li>
             </ul>
         </section>
     </fieldset>
