@@ -7,9 +7,6 @@ require 'config.php';
 			case "stock.php":
 				$content_for_layout ="stock.php"; 
 				break;
-			case "connexion.php":
-				$content_for_layout ="connexion.php"; 
-				break;
 			default: 
 				$content_for_layout ="stock.php";
 				break;
