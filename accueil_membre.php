@@ -43,7 +43,6 @@
                 <li><a href="#">Se Désinscrire</a></li>
                 <li><a href="#">Rechercher</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
-
             </ul>
         </section>
     </fieldset>

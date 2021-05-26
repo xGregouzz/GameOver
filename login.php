@@ -20,7 +20,7 @@
 				$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 				if($data == false) {
-					$errMsg = "l'utilisateur $mail n'existe pas.";
+					$errMsg = "l'utilisateur ou le mot de passe n'existe pas.";
 				} else {
 					if($mdp == $data['mdp']) {
 						$_SESSION['nom'] = $data['nom'];
@@ -30,7 +30,7 @@
 						header('Location: accueil_membre.php');
 						exit;
 					} else {
-						$errMsg = 'Le mot de passe ne correspond pas.';
+						$errMsg = "l'utilisateur ou le mot de passe n'existe pas.";
 					}
 				}
 			}
