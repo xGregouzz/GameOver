@@ -26,6 +26,8 @@
 <body>
 <?php
     require_once 'config.php';
+    require_once 'fonction_affichage.php';
+    $articles = getArticle($connect,1, $_GET['id']);
 ?>
 <fieldset>
 <header id="header">
@@ -84,30 +86,9 @@
 	</nav>
 </header>
 <div class="container">
-    <?php
-        $req = $connect->query('SELECT * FROM articles');
-        $articles = $req->fetchAll();
-
-        foreach ($articles as $article): ?>
-        <center>
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="article">
-                        <div class="article-image">
-                            <br><?php echo '<img src="' . $article['id'] . '.jpg">'; ?>
-                            <span class="article-title"><br><?= $article['nom'] ?></span>
-                        </div>
-                        <div class="article-description">
-                            <p><?= $article['description'] ?><br></p>
-                        </div>
-                    </div>
-                    <div class="article-action">
-                        <a href="single_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a>
-                    </div>
-                </div>
-            </div>
-        </center>
-        <?php endforeach ?>
+    <center>
+    <h1><?= $articles['nom'] ?></h1>
+    </center>
 </div>
 </body>
 </html>
