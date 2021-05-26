@@ -5,7 +5,8 @@
 		$errMsg = '';
 		$mail = $_POST['mail'];
 		$mdp = $_POST['mdp'];
-
+		$nom = $_POST['nom'];
+	
 		if($mail == '')
 			$errMsg = 'Entrer votre email';
 		if($mdp == '')
@@ -26,7 +27,7 @@
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['mail'] = $data['mail'];
 						$_SESSION['mdp'] = $data['mdp'];
-
+						$_SESSION['welcome_message'] = "Bonjour $nom vous êtes connecté";
 						header('Location: accueil_membre.php');
 						exit;
 					} else {
@@ -62,6 +63,7 @@
 				<form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
 					Mot De Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
+					Pseudonyme : <input type="text" name="nom" value="<?php if(isset($_POST['nom'])) echo $_POST['nom'] ?>" autocomplete="off" class="box"/><br /><br />
 					<input type="submit" name='login' value="Se connecter" class='submit'/><br />
 				</form>
 			</div>

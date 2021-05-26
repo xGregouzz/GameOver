@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>GameOver</title>
 </head>
+<?php
+session_start();
+?>
+
 <style>
     .links {
         display: flex;
@@ -34,6 +38,7 @@
         <center>
             <fieldset>
                   <h1>GameOver</h1>
+                  <p> <?php echo $_SESSION['welcome_message']; ?></p>
             </fieldset>
          </center>
         <nav class="action">
