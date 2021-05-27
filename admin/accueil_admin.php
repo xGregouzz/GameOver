@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="article-action">
-                        <a href="single_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a>
+                        <a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a>
                     </div>
                 </div>
             </div>

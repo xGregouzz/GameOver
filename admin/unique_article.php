@@ -88,7 +88,20 @@
 <div class="container">
     <center>
     <h1><?= $articles['nom'] ?></h1>
+    <h1><?= $articles['plateforme'] ?></h1>
+    <h1><?= $articles['type'] ?></h1>
+    <h1><?= $articles['description'] ?></h1>
+    <h1><?= $articles['genre'] ?></h1>
+    <h1><?= $articles['pegi'] ?></h1>
+    <h1><?= $articles['editeur'] ?></h1>
+    <h1><?= $articles['developpeur'] ?></h1>
+    <h1><?= $articles['prix'] ?></h1>
     </center>
 </div>
+<ul>
+    <li><a href="supprimer_article.php?id=<?= $articles['id'] ?>">Supprimer Article</a></li>
+    <li><a href="modifier_article.php?id=<?= $articles['id'] ?>">Modifier Article</a></li>
+    <li><a href="accueil_admin.php">Espace Admin</a></li>
+</ul>
 </body>
 </html>
