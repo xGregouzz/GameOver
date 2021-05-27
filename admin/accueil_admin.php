@@ -31,7 +31,7 @@
 <header id="header">
     <div class="topHeader">
         <div>
-            <img width="150px" src='LogoGameOver.png' alt="">
+            <img width="150px" src='../img/LogoGameOver.png' alt="">
         </div>
         <center>
             <fieldset>
@@ -94,7 +94,7 @@
                 <div class="col s12 m7">
                     <div class="article">
                         <div class="article-image">
-                            <br><?php echo '<img src="' . $article['id'] . '.jpg">'; ?>
+                            <br><?php echo '<img src="../img/' . $article['id'] . '.png">'; ?>
                             <span class="article-title"><br><?= $article['nom'] ?></span>
                         </div>
                         <div class="article-description">

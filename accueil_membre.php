@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +35,7 @@
         <center>
             <fieldset>
                   <h1>GameOver</h1>
+                  <p>Bienvenue <?php echo ucfirst ($_SESSION['client']) ?></p>
             </fieldset>
          </center>
         <nav class="action">
