@@ -42,7 +42,7 @@
                 <li><a href="login.php">Connexion</a></li>
                 <li><a href="register.php">Inscription</a></li>
                 <li><a href="#">Rechercher</a></li>
-
+                
             </ul>
         </section>
     </fieldset>

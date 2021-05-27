@@ -22,10 +22,6 @@
 		if($mdp == '')
 			$errMsg = 'Entrer un mot de passe valide';
 
-			// hashage du mot de passe :
-
-			$mdp = hash('sha256', $mdp);
-
 		if($errMsg == ''){
 			try {
 				$stmt = $connect->prepare('INSERT INTO utilisateurs (etat, nom, prenom, mail, date_naissance, mdp) VALUES ("client",:nom, :prenom, :mail, :date_naissance, :mdp)');

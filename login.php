@@ -1,11 +1,10 @@
 <?php
 	require 'config.php';
-	$admin = 'admin@gmail.com'; 
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
-		$mail = $_POST['mail'];
-		$mdp = $_POST['mdp'];
+		$mail = htmlspecialchars($_POST['mail']);
+		$mdp = htmlspecialchars($_POST['mdp']);
 
 		if($mail == '')
 			$errMsg = 'Entrer votre email';
@@ -14,34 +13,23 @@
 
 		if($errMsg == '') {
 			try {
-				$stmt = $connect->prepare('SELECT id, nom, mdp,mail FROM Utilisateurs WHERE mail = :mail');
-				$stmt->execute(array(
+				$req = $connect->prepare('SELECT * FROM utilisateurs WHERE mail = :mail');
+				$req->execute(array(
 					':mail' => $mail
 				));
-				$data = $stmt->fetch(PDO::FETCH_ASSOC);
+				$data = $req->fetch(PDO::FETCH_ASSOC);
 
 				if($data == false) {
-					$errMsg = "L'adresse mail ou le mot de passe est incorrect.";
+					$errMsg = "Le mot de passe ou l'email est incorrect.";
 				} else {
-					
-					// hashage mdp
-
-					// $mdp = password_verify('sha256', $mdp);
-
-					if($mdp == $data['mdp']) {
-						$_SESSION['nom'] = $data['nom'];
-						$_SESSION['mail'] = $data['mail'];
-						$_SESSION['mdp'] = $data['mdp'];
-						
-					if($data['mail'] === $admin){	
-						header('Location: accueil_admin.php');
-					}else{
+					if($mdp == $data['mdp'] AND $data['etat'] == 'client') {
+						$_SESSION['client'] = $data['nom'];
 						header('Location: accueil_membre.php');
-						$errMsg = "Bienvenue $mail";
-					}	
-						exit;
+					} else if ($mdp == $data['mdp'] AND $data['etat'] == 'admin') {
+						$_SESSION['admin'] = $data['nom'];
+						header('Location: admin/accueil_admin.php');
 					} else {
-						$errMsg = "L'adresse mail ou le mot de passe est incorrect.";
+						$errMsg = "Le mot de passe ou l'email est incorrect.";
 					}
 				}
 			}
@@ -70,10 +58,9 @@
 			?>
 			<div style="background-color:#006D9C; color:#FFFFFF; padding:10px;"><b>Connexion</b></div>
 			<div style="margin: 15px">
-
 				<form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
-					Mot de Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
+					Mot De Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
 					<input type="submit" name='login' value="Se connecter" class='submit'/><br />
 				</form>
 			</div>

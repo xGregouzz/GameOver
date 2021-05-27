@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,17 +35,17 @@
         <center>
             <fieldset>
                   <h1>GameOver</h1>
+                  <p>Bienvenue <?php echo ucfirst ($_SESSION['client']) ?></p>
             </fieldset>
-
-
          </center>
         <nav class="action">
         <section class="categorie">
             <ul>
+                <li><a href="#">Modifier Profil</a></li>
+                <li><a href="#">Se Désinscrire</a></li>
                 <li><a href="#">Rechercher</a></li>
-                <li><a href="#">Modifier profil</a></li>
-                <li><a href="#">Se désinscrire</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
+
             </ul>
         </section>
     </fieldset>
