@@ -88,24 +88,18 @@
         $articles = $req->fetchAll();
 
         foreach ($articles as $article): ?>
-        <center>
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="article">
-                        <div class="article-image">
-                            <br><?php echo '<img src="../img/' . $article['id'] . '.png">'; ?>
-                            <span class="article-title"><br><?= $article['nom'] ?></span>
-                        </div>
-                        <div class="article-description">
-                            <p><?= $article['description'] ?><br></p>
-                        </div>
-                    </div>
-                    <div class="article-action">
-                        <a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a>
-                    </div>
-                </div>
-            </div>
-        </center>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td rowspan="3"><?php echo '<img src="../img/' . $article['id'] . '.png">'; ?></td>
+                <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
+            </tr>
+            <tr>
+                <td><p><?= $article['description'] ?></p></td>
+            </tr>
+            <tr>
+                <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
+            </tr>
+        </table>
         <?php endforeach ?>
 </div>
 </body>
