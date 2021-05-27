@@ -26,16 +26,18 @@
 					
 					// hashage mdp
 
-					$mdp = password_verify('sha256', $mdp);
+					// $mdp = password_verify('sha256', $mdp);
 
 					if($mdp == $data['mdp']) {
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['mail'] = $data['mail'];
 						$_SESSION['mdp'] = $data['mdp'];
+						
 					if($data['mail'] === $admin){	
 						header('Location: accueil_admin.php');
 					}else{
 						header('Location: accueil_membre.php');
+						$errMsg = "Bienvenue $mail";
 					}	
 						exit;
 					} else {

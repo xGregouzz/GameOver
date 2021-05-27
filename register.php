@@ -24,7 +24,7 @@
 
 			// hashage du mot de passe :
 
-			// $mdp = password_verify('sha256', $mdp);
+			$mdp = hash('sha256', $mdp);
 
 		if($errMsg == ''){
 			try {

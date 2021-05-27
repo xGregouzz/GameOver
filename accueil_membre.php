@@ -35,6 +35,8 @@
             <fieldset>
                   <h1>GameOver</h1>
             </fieldset>
+
+
          </center>
         <nav class="action">
         <section class="categorie">
