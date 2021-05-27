@@ -33,7 +33,7 @@
 <header id="header">
     <div class="topHeader">
         <div>
-            <img width="150px" src='LogoGameOver.png' alt="">
+            <img width="150px" src='../img/LogoGameOver.png' alt="">
         </div>
         <center>
             <fieldset>

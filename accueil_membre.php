@@ -82,7 +82,6 @@
 			<ul>
 				<li><a href="#">Steam</a></li>
 				<li><a href="#">Epic Games</a></li>
-                <li><a href="#">Abonnement PC</a></li>
 			</ul>
 		</section>
 	</nav>

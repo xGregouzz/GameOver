@@ -78,7 +78,6 @@
 			<ul>
 				<li><a href="steam.php">Steam</a></li>
 				<li><a href="epicgames.php">Epic Games</a></li>
-                <li><a href="abopc.php">Abonnement PC</a></li>
 			</ul>
 		</section>
 	</nav>
