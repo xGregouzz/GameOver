@@ -16,5 +16,5 @@ INSERT INTO `articles` (`id`, `plateforme`, `type`, `nom`, `genre`, `description
 
 DELETE FROM utilisateurs;
 INSERT INTO `utilisateurs` (`id`, `etat`, `nom`, `prenom`, `mail`, `mdp`, `date_naissance`) VALUES
-(1, 'admin', 'test', 'test', 'test@gmail.com', 'test', '2000-01-01'),
+(1, 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin', '2000-01-01'),
 (2, 'client', 'client', 'client', 'client@gmail.com', 'client', '2000-01-01');
