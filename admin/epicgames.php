@@ -42,6 +42,7 @@
         <section class="categorie">
             <ul>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
+                <li><a href="accueil_admin.php">Accueil</a></li>
             </ul>
         </section>
     </fieldset>

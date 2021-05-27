@@ -44,6 +44,7 @@
         <section class="categorie">
             <ul>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
+                <li><a href="accueil_admin.php">Accueil</a></li>
             </ul>
         </section>
     </fieldset>
@@ -101,7 +102,6 @@
 <ul>
     <li><a href="supprimer_article.php?id=<?= $articles['id'] ?>">Supprimer Article</a></li>
     <li><a href="modifier_article.php?id=<?= $articles['id'] ?>">Modifier Article</a></li>
-    <li><a href="accueil_admin.php">Espace Admin</a></li>
 </ul>
 </body>
 </html>
