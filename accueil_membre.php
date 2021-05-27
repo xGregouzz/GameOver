@@ -1,13 +1,10 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>GameOver</title>
 </head>
-<?php
-session_start();
-?>
-
 <style>
     .links {
         display: flex;
@@ -38,7 +35,7 @@ session_start();
         <center>
             <fieldset>
                   <h1>GameOver</h1>
-                  <p> <?php echo $_SESSION['welcome_message']; ?></p>
+                  <p>Bienvenue <?php echo ucfirst ($_SESSION['client']) ?></p>
             </fieldset>
          </center>
         <nav class="action">
@@ -48,6 +45,7 @@ session_start();
                 <li><a href="#">Se Désinscrire</a></li>
                 <li><a href="#">Rechercher</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
+
             </ul>
         </section>
     </fieldset>

@@ -3,10 +3,9 @@
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
-		$mail = $_POST['mail'];
-		$mdp = $_POST['mdp'];
-		$nom = $_POST['nom'];
-	
+		$mail = htmlspecialchars($_POST['mail']);
+		$mdp = htmlspecialchars($_POST['mdp']);
+
 		if($mail == '')
 			$errMsg = 'Entrer votre email';
 		if($mdp == '')
@@ -14,24 +13,23 @@
 
 		if($errMsg == '') {
 			try {
-				$stmt = $connect->prepare('SELECT id, nom, mdp,mail FROM Utilisateurs WHERE mail = :mail');
-				$stmt->execute(array(
+				$req = $connect->prepare('SELECT * FROM utilisateurs WHERE mail = :mail');
+				$req->execute(array(
 					':mail' => $mail
 				));
-				$data = $stmt->fetch(PDO::FETCH_ASSOC);
+				$data = $req->fetch(PDO::FETCH_ASSOC);
 
 				if($data == false) {
-					$errMsg = "l'utilisateur ou le mot de passe n'existe pas.";
+					$errMsg = "Le mot de passe ou l'email est incorrect.";
 				} else {
-					if($mdp == $data['mdp']) {
-						$_SESSION['nom'] = $data['nom'];
-						$_SESSION['mail'] = $data['mail'];
-						$_SESSION['mdp'] = $data['mdp'];
-						$_SESSION['welcome_message'] = "Bonjour $nom vous êtes connecté";
+					if($mdp == $data['mdp'] AND $data['etat'] == 'client') {
+						$_SESSION['client'] = $data['nom'];
 						header('Location: accueil_membre.php');
-						exit;
+					} else if ($mdp == $data['mdp'] AND $data['etat'] == 'admin') {
+						$_SESSION['admin'] = $data['nom'];
+						header('Location: admin/accueil_admin.php');
 					} else {
-						$errMsg = "l'utilisateur ou le mot de passe n'existe pas.";
+						$errMsg = "Le mot de passe ou l'email est incorrect.";
 					}
 				}
 			}
@@ -63,7 +61,6 @@
 				<form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
 					Mot De Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
-					Pseudonyme : <input type="text" name="nom" value="<?php if(isset($_POST['nom'])) echo $_POST['nom'] ?>" autocomplete="off" class="box"/><br /><br />
 					<input type="submit" name='login' value="Se connecter" class='submit'/><br />
 				</form>
 			</div>
