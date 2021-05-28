@@ -118,7 +118,7 @@
 <div class="container">
     <center>
         <h3>Modifier l'article "<?= $articles['nom'] ?>"</h3>
-        <h4>Laissez vide si aucun changement</h4>
+        <h4>Ne touchez pas le contenu si il n'y a aucun changement</h4>
         <?php
         if (isset($_SESSION['flash']['success'])) {
             echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
@@ -130,15 +130,55 @@
             <h4>Le nom :</h4>
             <input type="text" name="nom" value="<?= $articles['nom'] ?>"/>
             <h4>La plateforme :</h4>
-            <input type="text" name="plateforme" value="<?= $articles['plateforme'] ?>"/>
+            <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="<?= $articles['plateforme'] ?>">
+            <datalist id="plateforme">
+                <option value="nintendo">
+                <option value="pc">
+                <option value="playstation">
+                <option value="xbox">
+            </datalist>
             <h4>Le type de plateforme :</h4>
-            <input type="text" name="type" value="<?= $articles['type'] ?>"/>
+            <input list="type" type="text" id="choix_type" name="type" value="<?= $articles['type'] ?>">
+            <datalist id="type">
+                <option value="aboPlay">
+                <option value="aboXbox">
+                <option value="aboNintendo">
+                <option value="EpicGames">
+                <option value="nintendo3DS">
+                <option value="nintendoSwitch">
+                <option value="ps3">
+                <option value="ps4">
+                <option value="ps5">
+                <option value="Steam">
+                <option value="xbox360">
+                <option value="xboxOne">
+                <option value="xboxSeriesX">
+            </datalist>
             <h4>Le genre :</h4>
-            <input type="text" name="genre" value="<?= $articles['genre'] ?>"/>
+            <input list="genre" type="text" id="choix_genre" name="genre" value="<?= $articles['genre'] ?>">
+            <datalist id="genre">
+                <option value="abo">
+                <option value="action">
+                <option value="aventure">
+                <option value="combat">
+                <option value="course">
+                <option value="educatif">
+                <option value="gestion">
+                <option value="guerre">
+                <option value="horreur">
+                <option value="sport">
+            </datalist>
             <h4>La description :</h4>
             <input type="text" name="description" value="<?= $articles['description'] ?>"/>
             <h4>Le pegi :</h4>
-            <input type="text" name="pegi" value="<?= $articles['pegi'] ?>"/>
+            <input list="pegi" type="text" id="choix_pegi" name="pegi" value="<?= $articles['pegi'] ?>">
+            <datalist id="pegi">
+                <option value="3">
+                <option value="7">
+                <option value="12">
+                <option value="16">
+                <option value="18">
+            </datalist>
             <h4>L'éditeur :</h4>
             <input type="text" name="editeur" value="<?= $articles['editeur'] ?>"/>
             <h4>Le developpeur :</h4>
