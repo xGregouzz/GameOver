@@ -169,7 +169,7 @@
                 <option value="sport">
             </datalist>
             <h4>La description :</h4>
-            <input type="text" name="description" value="<?= $articles['description'] ?>"/>
+            <textarea id="description" name="description" rows="11" cols="40"><?= $articles['description'] ?></textarea>
             <h4>Le pegi :</h4>
             <input list="pegi" type="text" id="choix_pegi" name="pegi" value="<?= $articles['pegi'] ?>">
             <datalist id="pegi">
