@@ -8,8 +8,12 @@
 		$nom = $_POST['nom'];
 		$prenom = $_POST['prenom'];
 		$mail = $_POST['mail'];
-		$date_naissance = $_POST['date_naissance'];
 		$mdp = $_POST['mdp'];
+
+		$date_naissance = $_POST['date_naissance'];
+		$origin = date_create('2009-10-11');
+		$target = date_create($date_naissance);
+		$interval = date_diff($origin, $target);
 
 		if($nom == '')
 			$errMsg = 'Entrer un nom';
@@ -23,20 +27,24 @@
 			$errMsg = 'Entrer un mot de passe valide';
 
 		if($errMsg == ''){
-			try {
-				$stmt = $connect->prepare('INSERT INTO utilisateurs (etat, nom, prenom, mail, date_naissance, mdp) VALUES ("client",:nom, :prenom, :mail, :date_naissance, :mdp)');
-				$stmt->execute(array(
-					':nom' => $nom,
-					':prenom' => $prenom,
-					':mail' => $mail,
-					':date_naissance' => $date_naissance,
-					':mdp' => $mdp
-					));
-				header('Location: register.php?action=joined');
-				exit;
-			}
-			catch(PDOException $e) {
-				echo $e->getMessage();
+			if ($interval >= 6570) {
+				try {
+					$stmt = $connect->prepare('INSERT INTO utilisateurs (etat, nom, prenom, mail, date_naissance, mdp) VALUES ("client",:nom, :prenom, :mail, :date_naissance, :mdp)');
+					$stmt->execute(array(
+						':nom' => $nom,
+						':prenom' => $prenom,
+						':mail' => $mail,
+						':date_naissance' => $date_naissance,
+						':mdp' => $mdp
+						));
+					header('Location: register.php?action=joined');
+					exit;
+				}
+				catch(PDOException $e) {
+					echo $e->getMessage();
+				}
+			} else {
+				echo "Vous ne possedez pas l'age requis";
 			}
 		}
 	}

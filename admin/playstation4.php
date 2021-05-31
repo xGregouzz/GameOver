@@ -41,8 +41,9 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="accueil_admin.php">Accueil</a></li>
+                <li><a href="ajouter_article.php">Ajouter un article</a></li>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
             </ul>
         </section>
     </fieldset>

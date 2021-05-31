@@ -27,11 +27,6 @@
 <?php
     require_once 'config.php';
     require_once 'fonction_affichage.php';
-    $articles = getArticle($connect,1, $_GET['id']);
-
-    if (!isset($_GET['id'])) {
-        header('location: accueil_admin.php');
-    }
 
     if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
         header('location: ../accueil.php');
@@ -39,18 +34,17 @@
 
     if (isset($_POST) AND !empty($_POST)) {
         if (!empty($_POST['nom']) AND !empty($_POST['plateforme']) AND !empty($_POST['type']) AND !empty($_POST['genre']) AND !empty($_POST['description']) AND !empty($_POST['pegi']) AND !empty($_POST['editeur']) AND !empty($_POST['developpeur']) AND !empty($_POST['prix'])) {
-            $req = $connect->prepare('UPDATE articles SET nom = :nom, plateforme = :plateforme, type = :type, genre = :genre, description = :description, pegi = :pegi, editeur = :editeur, developpeur = :developpeur, prix = :prix WHERE id = :id');
+            $req = $connect->prepare('INSERT INTO `articles` (`id`, `plateforme`, `type`, `nom`, `genre`, `description`, `pegi`, `editeur`, `developpeur`, `prix`) VALUES (:plateforme, :type, :nom, :genre, :description, :pegi, :editeur, :developpeur, :prix');
             $req->execute([
-                'nom' => $_POST['nom'],
                 'plateforme' => $_POST['plateforme'],
                 'type' => $_POST['type'],
+                'nom' => $_POST['nom'],
                 'genre' => $_POST['genre'],
                 'description' => $_POST['description'],
                 'pegi' => $_POST['pegi'],
                 'editeur' => $_POST['editeur'],
                 'developpeur' => $_POST['developpeur'],
                 'prix' => $_POST['prix'],
-                'id' => $_GET['id'],
             ]);
             $_SESSION['flash']['success'] = 'Article posté !';
         } else {
@@ -118,8 +112,7 @@
 </header>
 <div class="container">
     <center>
-        <h3>Modifier l'article "<?= $articles['nom'] ?>"</h3>
-        <h4>Ne touchez pas le contenu si il n'y a aucun changement</h4>
+        <h2>Pour ajouter un article, remplissez tous les champs</h2>
         <?php
         if (isset($_SESSION['flash']['success'])) {
             echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
@@ -129,9 +122,9 @@
         ?>
         <form method="post">
             <h4>Le nom :</h4>
-            <input type="text" name="nom" value="<?= $articles['nom'] ?>"/>
+            <input type="text" name="nom" value=""/>
             <h4>La plateforme :</h4>
-            <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="<?= $articles['plateforme'] ?>">
+            <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="">
             <datalist id="plateforme">
                 <option value="nintendo">
                 <option value="pc">
@@ -139,7 +132,7 @@
                 <option value="xbox">
             </datalist>
             <h4>Le type de plateforme :</h4>
-            <input list="type" type="text" id="choix_type" name="type" value="<?= $articles['type'] ?>">
+            <input list="type" type="text" id="choix_type" name="type" value="">
             <datalist id="type">
                 <option value="aboPlay">
                 <option value="aboXbox">
@@ -156,7 +149,7 @@
                 <option value="xboxSeriesX">
             </datalist>
             <h4>Le genre :</h4>
-            <input list="genre" type="text" id="choix_genre" name="genre" value="<?= $articles['genre'] ?>">
+            <input list="genre" type="text" id="choix_genre" name="genre" value="">
             <datalist id="genre">
                 <option value="abo">
                 <option value="action">
@@ -170,9 +163,9 @@
                 <option value="sport">
             </datalist>
             <h4>La description :</h4>
-            <textarea id="description" name="description" rows="11" cols="40"><?= $articles['description'] ?></textarea>
+            <textarea id="description" name="description" rows="11" cols="40"></textarea>
             <h4>Le pegi :</h4>
-            <input list="pegi" type="text" id="choix_pegi" name="pegi" value="<?= $articles['pegi'] ?>">
+            <input list="pegi" type="text" id="choix_pegi" name="pegi" value="">
             <datalist id="pegi">
                 <option value="3">
                 <option value="7">
@@ -181,14 +174,14 @@
                 <option value="18">
             </datalist>
             <h4>L'éditeur :</h4>
-            <input type="text" name="editeur" value="<?= $articles['editeur'] ?>"/>
+            <input type="text" name="editeur" value=""/>
             <h4>Le developpeur :</h4>
-            <input type="text" name="developpeur" value="<?= $articles['developpeur'] ?>"/>
+            <input type="text" name="developpeur" value=""/>
             <h4>Le prix :</h4>
-            <input type="text" name="prix" value="<?= $articles['prix'] ?>"/>
+            <input type="text" name="prix" value=""/>
             </br>
             </br>
-            <button>Modifier</button>
+            <button>Ajouter Article</button>
         </form>
     </center>
 </div>
