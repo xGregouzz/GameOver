@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `GameOver`.`articles` (
   `editeur` VARCHAR(50) NULL,
   `developpeur` VARCHAR(50) NULL,
   `prix` DECIMAL(5,2) NOT NULL,
+  `image` VARCHAR(250) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

@@ -121,15 +121,17 @@
         <h3>Modifier l'article "<?= $articles['nom'] ?>"</h3>
         <h4>Ne touchez pas le contenu si il n'y a aucun changement</h4>
         <?php
-        if (isset($_SESSION['flash']['success'])) {
-            echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
-        } else if (isset($_SESSION['flash']['error'])) {
-            echo "<div class='error'>".$_SESSION['flash']['error'].'</div>';
+        if (!empty($_POST)) {
+            if (isset($_SESSION['flash']['success'])) {
+                echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
+            } else if (isset($_SESSION['flash']['error'])) {
+                echo "<div class='error'>".$_SESSION['flash']['error'].'</div>';
+            }
         }
         ?>
         <form method="post">
             <h4>Le nom :</h4>
-            <input type="text" name="nom" placeholder="<?= $articles['nom'] ?>"/>
+            <textarea id="nom" name="nom" rows="1" cols="30" placeholder="<?= $articles['nom'] ?>"></textarea>
             <h4>La plateforme :</h4>
             <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" placeholder="<?= $articles['plateforme'] ?>">
             <datalist id="plateforme">
@@ -186,6 +188,7 @@
             <input type="text" name="developpeur" placeholder="<?= $articles['developpeur'] ?>"/>
             <h4>Le prix :</h4>
             <input type="text" name="prix" placeholder="<?= $articles['prix'] ?>"/>
+            </br>
             </br>
             </br>
             <button>Modifier</button>

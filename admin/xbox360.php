@@ -80,35 +80,32 @@
 			<ul>
 				<li><a href="steam.php">Steam</a></li>
 				<li><a href="epicgames.php">Epic Games</a></li>
-                <li><a href="abopc.php">Abonnement PC</a></li>
 			</ul>
 		</section>
 	</nav>
 </header>
+</br>
+</br>
 <div class="container">
     <?php
-        $req = $connect->query('SELECT * FROM `articles` WHERE `type` = "xbox360"');
+        $req = $connect->query('SELECT * FROM articles WHERE `type` = "xbox360"');
         $articles = $req->fetchAll();
 
         foreach ($articles as $article): ?>
-        <center>
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="article">
-                        <div class="article-image">
-                            <br><?php echo '<img src="../img/' . $article['id'] . '.png">'; ?>
-                            <span class="article-title"><br><?= $article['nom'] ?></span>
-                        </div>
-                        <div class="article-description">
-                            <p><?= $article['description'] ?><br></p>
-                        </div>
-                    </div>
-                    <div class="article-action">
-                        <a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a>
-                    </div>
-                </div>
-            </div>
-        </center>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td rowspan="3"><img src="../img/<?php echo $article['image']; ?>"</td>
+                <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
+            </tr>
+            <tr>
+                <td><p><?= $article['description'] ?></p></td>
+            </tr>
+            <tr>
+                <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
+            </tr>
+        </table>
+        </br>
+        </br>
         <?php endforeach ?>
 </div>
 </body>

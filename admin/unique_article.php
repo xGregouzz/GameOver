@@ -101,8 +101,8 @@
     </center>
 </div>
 <ul>
-    <li><a href="supprimer_article.php?id=<?= $articles['id'] ?>">Supprimer Article</a></li>
     <li><a href="modifier_article.php?id=<?= $articles['id'] ?>">Modifier Article</a></li>
+    <li><a href="supprimer_article.php?id=<?= $articles['id'] ?>">Supprimer Article</a></li>
 </ul>
 </body>
 </html>

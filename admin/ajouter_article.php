@@ -113,15 +113,17 @@
     <center>
         <h2>Pour ajouter un article, remplissez tous les champs</h2>
         <?php
-        if (isset($_SESSION['flash']['success'])) {
-            echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
-        } else if (isset($_SESSION['flash']['error'])) {
-            echo "<div class='error'>".$_SESSION['flash']['error'].'</div>';
+        if (!empty($_POST)) {
+            if (isset($_SESSION['flash']['success'])) {
+                echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
+            } else if (isset($_SESSION['flash']['error'])) {
+                echo "<div class='error'>".$_SESSION['flash']['error'].'</div>';
+            }
         }
         ?>
         <form method="post">
             <h4>Le nom :</h4>
-            <input type="text" name="nom" value=""/>
+            <textarea id="nom" name="nom" rows="1" cols="30""></textarea>
             <h4>La plateforme :</h4>
             <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="">
             <datalist id="plateforme">
@@ -178,6 +180,7 @@
             <input type="text" name="developpeur" value=""/>
             <h4>Le prix :</h4>
             <input type="text" name="prix" value=""/>
+            </br>
             </br>
             </br>
             <button>Ajouter Article</button>

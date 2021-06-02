@@ -83,6 +83,8 @@
 		</section>
 	</nav>
 </header>
+</br>
+</br>
 <div class="container">
     <?php
         $req = $connect->query('SELECT * FROM articles');
@@ -91,7 +93,7 @@
         foreach ($articles as $article): ?>
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td rowspan="3"><?php echo '<img src="../img/' . $article['id'] . '.png">'; ?></td>
+                <td rowspan="3"><img src="../img/<?php echo $article['image']; ?>"</td>
                 <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
             </tr>
             <tr>
@@ -101,6 +103,8 @@
                 <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
             </tr>
         </table>
+        </br>
+        </br>
         <?php endforeach ?>
 </div>
 </body>
