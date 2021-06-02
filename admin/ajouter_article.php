@@ -26,7 +26,6 @@
 <body>
 <?php
     require_once 'config.php';
-    require_once 'fonction_affichage.php';
 
     if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
         header('location: ../accueil.php');
@@ -34,11 +33,11 @@
 
     if (isset($_POST) AND !empty($_POST)) {
         if (!empty($_POST['nom']) AND !empty($_POST['plateforme']) AND !empty($_POST['type']) AND !empty($_POST['genre']) AND !empty($_POST['description']) AND !empty($_POST['pegi']) AND !empty($_POST['editeur']) AND !empty($_POST['developpeur']) AND !empty($_POST['prix'])) {
-            $req = $connect->prepare('INSERT INTO `articles` (`id`, `plateforme`, `type`, `nom`, `genre`, `description`, `pegi`, `editeur`, `developpeur`, `prix`) VALUES (:plateforme, :type, :nom, :genre, :description, :pegi, :editeur, :developpeur, :prix');
+            $req = $connect->prepare('INSERT INTO `articles` (`nom`, `plateforme`, `type`, `genre`, `description`, `pegi`, `editeur`, `developpeur`, `prix`) VALUES (:nom, :plateforme, :type, :genre, :description, :pegi, :editeur, :developpeur, :prix)');
             $req->execute([
+                'nom' => $_POST['nom'],
                 'plateforme' => $_POST['plateforme'],
                 'type' => $_POST['type'],
-                'nom' => $_POST['nom'],
                 'genre' => $_POST['genre'],
                 'description' => $_POST['description'],
                 'pegi' => $_POST['pegi'],

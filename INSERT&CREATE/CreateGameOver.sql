@@ -37,9 +37,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `GameOver`.`articles` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(50) NOT NULL,
   `plateforme` ENUM('playstation', 'xbox', 'nintendo', 'pc') NOT NULL,
   `type` ENUM('ps3', 'ps4', 'ps5', 'aboPlay', 'xbox360', 'xboxOne', 'xboxSeriesX', 'aboXbox', 'nintendo3DS', 'nintendoSwitch', 'aboNintendo', 'Steam', 'EpicGames') NOT NULL,
-  `nom` VARCHAR(50) NOT NULL,
   `genre` ENUM('horreur', 'gestion', 'action', 'abo', 'aventure', 'combat', 'course', 'educatif', 'guerre', 'sport') NULL,
   `description` VARCHAR(1000) NOT NULL,
   `pegi` ENUM('3', '7', '12', '16', '18') NOT NULL,
