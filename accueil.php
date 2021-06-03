@@ -39,20 +39,19 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-            <?php
-            // order by id desc pour trier dans l'odre décroissant
-            require_once 'config.php';
-            $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
-            if(isset($_GET['search']) AND !empty($_GET['search'])){
-                $recherche = htmlspecialchars($_GET['search']);
-                // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
-                $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
-            }
-            ?>
-
-            <form method="GET">
-                <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
-                <input type="submit" name="envoyer" value="🔎">
+                <?php
+                // order by id desc pour trier dans l'odre décroissant
+                require_once 'config.php';
+                $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
+                if(isset($_GET['search']) AND !empty($_GET['search'])){
+                    $recherche = htmlspecialchars($_GET['search']);
+                    // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
+                    $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
+                }
+                ?>
+                <form method="GET">
+                    <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
+                    <input type="submit" name="envoyer" value="🔎">
                 </form>
                 </br>
                 </br>         
@@ -110,7 +109,7 @@
 
             <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td rowspan="3"><?php echo '<img src="img/' . $article['id'] . '.png">'; ?></td>
+                    <td rowspan="3"><img src="img/<?php echo $article['image']; ?>"></td>
                     <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
                 </tr>
                 <tr>
