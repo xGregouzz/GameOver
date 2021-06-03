@@ -93,7 +93,7 @@
         foreach ($articles as $article): ?>
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td rowspan="3"><img src="../img/<?php echo $article['image']; ?>"</td>
+                <td rowspan="3"><img src="../img/<?php echo $article['image']; ?>"></td>
                 <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
             </tr>
             <tr>
