@@ -1,4 +1,3 @@
-<?php require 'config.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +24,12 @@
     }
 </style>
 <body>
+<?php require_once 'config.php'; ?>
 <fieldset>
 <header id="header">
     <div class="topHeader">
         <div>
             <img width="150px" src="LogoGameOver.png" alt="">
-        
         </div>
         <center>
             <fieldset>
@@ -43,7 +42,6 @@
             <ul>
             <?php
             // order by id desc pour trier dans l'odre décroissant
-
             $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
             if(isset($_GET['search']) AND !empty($_GET['search'])){
                 $recherche = htmlspecialchars($_GET['search']);
@@ -57,7 +55,8 @@
                 <input type="submit" name="envoyer" value="🔎">
                 </form>
                 </br>
-                </br>                
+                </br>
+                <li><a href="accueil_membre.php">Accueil</a></li>
                 <li><a href="modifier_profil.php">Modifier Profil</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?php $utilisateurs['id'] ?>">Se Désinscrire</a></li>

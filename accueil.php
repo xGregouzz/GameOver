@@ -1,4 +1,3 @@
-<?php require 'config.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +41,7 @@
             <ul>
             <?php
             // order by id desc pour trier dans l'odre décroissant
-
+            require_once 'config.php';
             $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
             if(isset($_GET['search']) AND !empty($_GET['search'])){
                 $recherche = htmlspecialchars($_GET['search']);
@@ -56,7 +55,8 @@
                 <input type="submit" name="envoyer" value="🔎">
                 </form>
                 </br>
-                </br>                
+                </br>         
+                <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="login.php">Connexion</a></li>
                 <li><a href="register.php">Inscription</a></li>
             </ul>
