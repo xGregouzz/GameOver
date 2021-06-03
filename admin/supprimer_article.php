@@ -12,5 +12,5 @@ if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
         }
     }
 } else {
-    header('location:accueil_admin.php');
+    header('location: ../accueil.php');
 }
