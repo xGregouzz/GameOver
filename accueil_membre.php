@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require 'config.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,11 +41,28 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-                <li><a href="#">Modifier Profil</a></li>
-                <li><a href="#">Se Désinscrire</a></li>
+            <?php
+            // order by id desc pour trier dans l'odre décroissant
+
+            $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
+            if(isset($_GET['search']) AND !empty($_GET['search'])){
+                $recherche = htmlspecialchars($_GET['search']);
+                // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
+                $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
+            }
+            ?>
+
+            <form method="GET">
+                <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
+                <input type="submit" name="envoyer" value="🔎">
+                </form>
+
+                
+                <li><a href="modifier_profil.php">Modifier Profil</a></li>
+                <li><a href="desinscrire.php?id=<?php $utilisateurs['id'] ?> >Se Désinscrire</a></li>
                 <li><a href="#">Rechercher</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
-
+         
             </ul>
         </section>
     </fieldset>
@@ -85,7 +102,23 @@
                 <li><a href="#">Abonnement PC</a></li>
 			</ul>
 		</section>
+        <section class="afficher_utilisateur">
+
+                    <?php
+                        if($articles->rowCount() > 0){
+                            while($article = $articles->fetch()){
+                                ?>
+                                <p><?= $article['nom']; ?></p>
+                                <?php
+                            }
+                        }else{
+                            ?>
+                            <p>Aucun resultats<p>
+                            <?php
+                        }
+                ?>
+                </section>
 	</nav>
-</header>
+    </header>
 </body>
 </html>
