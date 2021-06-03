@@ -1,3 +1,4 @@
+<?php require 'config.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +40,25 @@
         <nav class="action">
         <section class="categorie">
             <ul>
+            <?php
+            // order by id desc pour trier dans l'odre décroissant
+
+            $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
+            if(isset($_GET['search']) AND !empty($_GET['search'])){
+                $recherche = htmlspecialchars($_GET['search']);
+                // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
+                $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
+            }
+            ?>
+
+            <form method="GET">
+                <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
+                <input type="submit" name="envoyer" value="🔎">
+                </form>
+                </br>
+                </br>                
                 <li><a href="login.php">Connexion</a></li>
                 <li><a href="register.php">Inscription</a></li>
-                <li><a href="#">Rechercher</a></li>
-                
             </ul>
         </section>
     </fieldset>
@@ -79,9 +95,42 @@
 			<ul>
 				<li><a href="#">Steam</a></li>
 				<li><a href="#">Epic Games</a></li>
+                <li><a href="#">Abonnement PC</a></li>
 			</ul>
 		</section>
 	</nav>
-</header>
+    </header>
+    </br>
+    </br>
+    <section class="afficher_utilisateur">
+            <?php
+            if($articles->rowCount() > 0){
+                while($article = $articles->fetch()) {
+            ?>
+
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td rowspan="3"><?php echo '<img src="img/' . $article['id'] . '.png">'; ?></td>
+                    <td><h2 style="margin: 0px;padding:0px"><?= $article['nom'] ?></h2></td>
+                </tr>
+                <tr>
+                    <td><p><?= $article['description'] ?></p></td>
+                </tr>
+                <tr>
+                    <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
+                </tr>
+            </table>
+            </br>
+            </br>
+
+            <?php
+                }
+            } else{
+            ?>
+                <p>Aucun resultat<p>
+            <?php
+            }
+            ?>
+        </section>
 </body>
 </html>
