@@ -9,7 +9,16 @@
 		$prenom = $_POST['prenom'];
 		$mail = $_POST['mail'];
 		$date_naissance = $_POST['date_naissance'];
-		$mdp = $_POST['mdp'];
+		$mdp = hash('sha512', $_POST['mdp']);
+
+		$birth = date_create($_POST["date_naissance"]);
+        $birthFormat = date_format($birth, "Y-m-d");
+        $age = date('Y') - date_format($birth, "Y");;
+
+    	if (date('md') < date('md', strtotime($birthFormat))) {
+                $age -= 1;
+        }
+
 
 		if($nom == '')
 			$errMsg = 'Entrer un nom';
@@ -21,6 +30,8 @@
 			$errMsg = 'Entrer une date de naissance valide';
 		if($mdp == '')
 			$errMsg = 'Entrer un mot de passe valide';
+		if($age < 18)
+			$errMsg = "Notre site n'accepte pas les mineures";	
 
 		if($errMsg == ''){
 			try {
