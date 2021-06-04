@@ -9,7 +9,7 @@
 		$prenom = $_POST['prenom'];
 		$mail = $_POST['mail'];
 		$date_naissance = $_POST['date_naissance'];
-		$mdp = hash('sha512', $_POST['mdp']);
+		$mdp = htmlspecialchars($_POST['mdp']);
 
 		$birth = date_create($_POST["date_naissance"]);
         $birthFormat = date_format($birth, "Y-m-d");
