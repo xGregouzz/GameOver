@@ -131,9 +131,9 @@
         ?>
         <form method="post">
             <h4>Le nom :</h4>
-            <textarea id="nom" name="nom" rows="1" cols="30" placeholder="<?= $articles['nom'] ?>"></textarea>
+            <textarea id="nom" name="nom" rows="1" cols="30" value="<?= $articles['nom'] ?>"></textarea>
             <h4>La plateforme :</h4>
-            <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" placeholder="<?= $articles['plateforme'] ?>">
+            <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="<?= $articles['plateforme'] ?>">
             <datalist id="plateforme">
                 <option value="nintendo">
                 <option value="pc">
@@ -141,7 +141,7 @@
                 <option value="xbox">
             </datalist>
             <h4>Le type de plateforme :</h4>
-            <input list="type" type="text" id="choix_type" name="type" placeholder="<?= $articles['type'] ?>">
+            <input list="type" type="text" id="choix_type" name="type" value="<?= $articles['type'] ?>">
             <datalist id="type">
                 <option value="aboPlay">
                 <option value="aboXbox">
@@ -158,7 +158,7 @@
                 <option value="xboxSeriesX">
             </datalist>
             <h4>Le genre :</h4>
-            <input list="genre" type="text" id="choix_genre" name="genre" placeholder="<?= $articles['genre'] ?>">
+            <input list="genre" type="text" id="choix_genre" name="genre" value="<?= $articles['genre'] ?>">
             <datalist id="genre">
                 <option value="abo">
                 <option value="action">
@@ -172,9 +172,9 @@
                 <option value="sport">
             </datalist>
             <h4>La description :</h4>
-            <textarea id="description" name="description" rows="11" cols="40" placeholder="<?= $articles['description'] ?>"></textarea>
+            <textarea id="description" name="description" rows="11" cols="40" value="<?= $articles['description'] ?>"></textarea>
             <h4>Le pegi :</h4>
-            <input list="pegi" type="text" id="choix_pegi" name="pegi" placeholder="<?= $articles['pegi'] ?>">
+            <input list="pegi" type="text" id="choix_pegi" name="pegi" value="<?= $articles['pegi'] ?>">
             <datalist id="pegi">
                 <option value="3">
                 <option value="7">
@@ -183,11 +183,11 @@
                 <option value="18">
             </datalist>
             <h4>L'éditeur :</h4>
-            <input type="text" name="editeur" placeholder="<?= $articles['editeur'] ?>"/>
+            <input type="text" name="editeur" value="<?= $articles['editeur'] ?>"/>
             <h4>Le developpeur :</h4>
-            <input type="text" name="developpeur" placeholder="<?= $articles['developpeur'] ?>"/>
+            <input type="text" name="developpeur" value="<?= $articles['developpeur'] ?>"/>
             <h4>Le prix :</h4>
-            <input type="text" name="prix" placeholder="<?= $articles['prix'] ?>"/>
+            <input type="text" name="prix" value="<?= $articles['prix'] ?>"/>
             </br>
             </br>
             </br>

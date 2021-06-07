@@ -35,7 +35,8 @@
         </div>
         <center>
             <fieldset>
-                  <h1>GameOver</h1>
+                <h1>GameOver</h1>
+                <p>Bienvenue <?php echo ucfirst ($_SESSION['admin']) ?></p>
             </fieldset>
          </center>
         <nav class="action">
