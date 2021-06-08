@@ -9,7 +9,7 @@
 		$prenom = $_POST['prenom'];
 		$mail = $_POST['mail'];
 		$date_naissance = $_POST['date_naissance'];
-		$mdp = htmlspecialchars($_POST['mdp']);
+		$mdp = $_post['mdp'];
 
 		$birth = date_create($_POST["date_naissance"]);
         $birthFormat = date_format($birth, "Y-m-d");
@@ -18,20 +18,26 @@
     	if (date('md') < date('md', strtotime($birthFormat))) {
                 $age -= 1;
         }
-
+		$req = $connect->prepare('SELECT * FROM utilisateurs WHERE mail = :mail');
+		$req->execute(array(
+			':mail' => $mail
+		));
+		$data = $req->fetch(PDO::FETCH_ASSOC);
 
 		if($nom == '')
-			$errMsg = 'Entrer un nom';
+			$errMsg = 'Entrer un nom.';
 		if($prenom == '')
-			$errMsg = 'Entrer un prenom';
+			$errMsg = 'Entrer un prénom.';
 		if($mdp == '')
-			$errMsg = 'Entrer un mot de passe valide';
+			$errMsg = 'Entrer un mot de passe valide.';
 		if($date_naissance == '')
-			$errMsg = 'Entrer une date de naissance valide';
+			$errMsg = 'Entrer une date de naissance valide.';
 		if($mdp == '')
-			$errMsg = 'Entrer un mot de passe valide';
+			$errMsg = 'Entrer un mot de passe valide.';
 		if($age < 18)
-			$errMsg = "Notre site n'accepte pas les mineures";	
+			$errMsg = "Notre site n'accepte pas les mineures.";
+		if($mail == $data['mail'])
+			$errMsg = 'Ce mail appartient déjà à un compte. <a href="login.php">Connexion</a>';
 
 		if($errMsg == ''){
 			try {
