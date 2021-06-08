@@ -7,9 +7,11 @@
 		$mdp = htmlspecialchars($_POST['mdp']);
 
 		if($mail == '')
-			$errMsg = 'Entrer votre email';
+			$errMsg = 'Entrer votre email.';
 		if($mdp == '')
-			$errMsg = 'Entrer votre mot de passe';
+			$errMsg = 'Entrer votre mot de passe.';
+		if($mail == '' AND $mdp == '')
+			$errMsg = 'Remplissez les champs.';
 
 		if($errMsg == '') {
 			try {
