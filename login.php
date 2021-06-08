@@ -4,7 +4,22 @@
 	if(isset($_POST['login'])) {
 		$errMsg = '';
 		$mail = htmlspecialchars($_POST['mail']);
-		$mdp = htmlspecialchars($_POST['mdp']);
+		$mdp = $_POST['mdp'];
+
+		$req = $connect->prepare('SELECT * FROM utilisateurs WHERE mail = :mail');
+				$req->execute(array(
+					':mail' => $mail
+				));
+		$db = $req->fetch();	
+		$hash = $db['mdp'];
+
+		if(password_verify($mdp, $hash)){
+			echo 'Le mot de passe est valide !';
+		} else {
+			echo 'Le mot de passe est invalide.';
+		}
+
+		echo "$hash";
 
 		if($mail == '')
 			$errMsg = 'Entrer votre email';
@@ -22,11 +37,13 @@
 				if($data == false) {
 					$errMsg = "Le mot de passe ou l'email est incorrect.";
 				} else {
-					if($mdp == $data['mdp'] AND $data['etat'] == 'client') {
+					if(password_verify($mdp, $hash) == true AND $data['etat'] == 'client') {
 						$_SESSION['client'] = $data['nom'];
+						$_SESSION['id'] = $data['id'];
 						header('Location: accueil_membre.php');
 					} else if ($mdp == $data['mdp'] AND $data['etat'] == 'admin') {
 						$_SESSION['admin'] = $data['nom'];
+						$_SESSION['id'] = $data['id'];
 						header('Location: admin/accueil_admin.php');
 					} else {
 						$errMsg = "Le mot de passe ou l'email est incorrect.";
@@ -60,7 +77,7 @@
 			<div style="margin: 15px">
 				<form action="" method="post">
 					Email : <input type="text" name="mail" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" autocomplete="off" class="box"/><br /><br />
-					Mot De Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
+					Mot de Passe : <input type="password" name="mdp" value="<?php if(isset($_POST['mdp'])) echo $_POST['mdp'] ?>" autocomplete="off" class="box" /><br/><br />
 					<input type="submit" name='login' value="Se connecter" class='submit'/><br />
 				</form>
 			</div>
