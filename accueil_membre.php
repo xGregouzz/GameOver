@@ -60,6 +60,7 @@
                 <li><a href="modifier_profil.php">Modifier Profil</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
+                <li><a href="panier.php">Voir mon panier</a></li>
             </ul>
         </section>
     </fieldset>
