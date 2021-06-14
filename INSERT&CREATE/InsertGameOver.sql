@@ -15,9 +15,9 @@ INSERT INTO `articles` (`id`, `nom`, `plateforme`, `type`, `genre`, `description
 (13, 'Far Cry 6','pc', 'EpicGames',  'action', 'Far Cry 6 est un jeu de tir à la première personne d\'action-aventure. Le gameplay suit les précédents jeux Far Cry, avec des joueurs utilisant des armes de fortune, des véhicules et embauchant Amigos, le nouveau système \"Fangs for Hire\", pour renverser le régime tyrannique.', '18', 'Ubisoft', 'Ubisoft Toronto', '69.99', '13.png');
 
 DELETE FROM utilisateurs;
-INSERT INTO `utilisateurs` (`id`, `etat`, `nom`, `prenom`, `mail`, `mdp`, `date_naissance`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@gmail.com', 'Admin1234', '2000-01-01'),
-(2, 'client', 'client', 'client', 'client@gmail.com', 'Client1234', '2000-01-01');
+INSERT INTO `utilisateurs` (`id`, `etat`, `nom`, `prenom`, `date_naissance`, `email`, `password`) VALUES
+(1, 'admin', 'admin', 'admin', '2000-01-01', 'admin@gmail.com', 'Admin1234'),
+(2, 'client', 'client', 'client', '2000-01-01', 'client@gmail.com', 'Client1234');
 
 DELETE FROM commandes;
 INSERT INTO `commandes` (`id`, `utilisateurs`, `date_commande`) VALUES

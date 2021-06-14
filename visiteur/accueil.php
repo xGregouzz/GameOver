@@ -57,7 +57,7 @@
                         </br>         
                         <li><a href="accueil.php">Accueil</a></li>
                         <li><a href="login.php">Connexion</a></li>
-                        <li><a href="register.php">Inscription</a></li>
+                        <li><a href="inscription.php">Inscription</a></li>
                     </ul>
                 </section>
             </div>

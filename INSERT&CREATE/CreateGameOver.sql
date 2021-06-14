@@ -23,11 +23,11 @@ USE `GameOver` ;
 CREATE TABLE IF NOT EXISTS `GameOver`.`utilisateurs` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `etat` ENUM('admin', 'client') NOT NULL DEFAULT 'client',
-  `nom` VARCHAR(50) NOT NULL,
   `prenom` VARCHAR(50) NOT NULL,
-  `mail` VARCHAR(200) NOT NULL,
-  `mdp` VARCHAR(50) NOT NULL,
+  `nom` VARCHAR(50) NOT NULL,
   `date_naissance` DATE NOT NULL,
+  `email` VARCHAR(200) NOT NULL,
+  `password` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
