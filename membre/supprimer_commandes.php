@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config.php';
 if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
     if (isset($_GET['id'])) {
         $req_commandes = $connect->query('SELECT * FROM commandes WHERE id = '.$_GET['id']);
@@ -27,11 +27,11 @@ if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
         if ($ligne_commande AND $commande) {
             $req_lignes_commandes = $connect->query('DELETE FROM lignes_commandes WHERE id = '.$_GET['id']);
             $req_commandes = $connect->query('DELETE FROM commandes WHERE id = '.$_GET['id']);
-            header('location: accueil_membre.php');
+            header('location: ../membre/accueil_membre.php');
         } else {
-            header('location: accueil_membre.php');
+            header('location: ../membre/accueil_membre.php');
         }
     }
 } else {
-    header('location: accueil.php');
+    header('location: ../visiteur/accueil.php');
 }

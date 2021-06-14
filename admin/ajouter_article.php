@@ -25,7 +25,7 @@
 </style>
 <body>
 <?php
-    require_once 'config.php';
+    require_once '../config.php';
 
     if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
         header('location: ../accueil.php');
@@ -72,7 +72,7 @@
             </ul>
         </section>
     </fieldset>
-    <link href="categories.css" rel="stylesheet">
+    <link href="../CSS/categories.css" rel="stylesheet">
     <nav class="menu">
 		<section class="categorie">
 			<h3>PlayStation</h3>

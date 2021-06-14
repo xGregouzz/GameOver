@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>GameOver</title>
@@ -24,45 +24,44 @@
     }
 </style>
 <body>
-<?php
-    require_once '../config.php';
-?>
-<fieldset>
-<header id="header">
-    <div class="topHeader">
-        <div>
-            <img width="150px" src='../img/LogoGameOver.png' alt="">
-        </div>
-        <center>
-            <fieldset>
-                <h1>GameOver</h1>
-                <p>Bienvenue <?php echo ucfirst ($_SESSION['admin']) ?></p>
-            </fieldset>
-         </center>
-        <nav class="action">
-        <section class="categorie">
-            <ul>
-                <?php
-                // order by id desc pour trier dans l'odre décroissant
-                $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
-                if(isset($_GET['search']) AND !empty($_GET['search'])){
-                    $recherche = htmlspecialchars($_GET['search']);
-                    // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
-                    $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
-                }
-                ?>
-                <form method="GET">
-                    <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
-                    <input type="submit" name="envoyer" value="🔎">
-                </form>
-                </br>
-                </br>
-                <li><a href="accueil_admin.php">Accueil</a></li>
-                <li><a href="ajouter_article.php">Ajouter un article</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-                <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
-            </ul>
-        </section>
+    <fieldset>
+        <header id="header">
+            <div class="topHeader">
+                <div>
+                    <img width="150px" src="../img/LogoGameOver.png" alt="">
+                
+                </div>
+                <center>
+                    <fieldset>
+                        <h1>GameOver</h1>
+                    </fieldset>
+                </center>
+                <nav class="action">
+                <section class="categorie">
+                    <ul>
+                        <?php
+                        // order by id desc pour trier dans l'odre décroissant
+                        require_once '../config.php';
+                        $articles = $connect->query('SELECT * FROM articles ORDER BY id DESC'); 
+                        if(isset($_GET['search']) AND !empty($_GET['search'])){
+                            $recherche = htmlspecialchars($_GET['search']);
+                            // ou le pseudo ressemble a la recherche ----"%'.$recherche.'%"----
+                            $articles = $connect->query('SELECT * FROM articles WHERE nom LIKE "%'.$recherche.'%" ORDER BY id DESC');
+                        }
+                        ?>
+                        <form method="GET">
+                            <input type="search" name="search" placeholder="Rechercher" autocomplete="off">
+                            <input type="submit" name="envoyer" value="🔎">
+                        </form>
+                        </br>
+                        </br>         
+                        <li><a href="accueil.php">Accueil</a></li>
+                        <li><a href="login.php">Connexion</a></li>
+                        <li><a href="register.php">Inscription</a></li>
+                    </ul>
+                </section>
+            </div>
+        </header>
     </fieldset>
     <link href="../CSS/categories.css" rel="stylesheet">
     <nav class="menu">
@@ -100,10 +99,10 @@
 			</ul>
 		</section>
 	</nav>
-</header>
-</br>
-</br>
- <section class="afficher_utilisateur">
+    </header>
+    </br>
+    </br>
+    <section class="afficher_utilisateur">
             <?php
             if($articles->rowCount() > 0){
                 while($article = $articles->fetch()) {
@@ -132,7 +131,6 @@
             <?php
             }
             ?>
-</section>
-</div>
+        </section>
 </body>
 </html>

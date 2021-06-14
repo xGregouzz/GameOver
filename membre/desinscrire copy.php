@@ -1,5 +1,5 @@
 <?php 
-require_once('config.php');
+require_once('../config.php');
 ?>
 <html> 
     <head> 
@@ -9,13 +9,13 @@ require_once('config.php');
     <body> 
         <?php
         $sup = "SUPPRIMER";
-        if (isset($_SESSION['client']) AND !empty($_SESSION['client'])) {
+        if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
             if (isset($_SESSION['id'])) {
                 $req = $connect->query('SELECT * FROM utilisateurs WHERE id = '.$_SESSION['id']);
                 $utilisateur = $req->fetch();
                 if(isset($_POST['supprimer']) AND $_POST['supprimer'] === $sup) {  
                     $supression = $connect->query('DELETE FROM utilisateurs WHERE id = '.$_SESSION['id']);
-                    header("Location: accueil.php"); 
+                    header("Location: ../visiteur/accueil.php"); 
                     exit; 
                 } else if (isset($_POST['confirmer']) AND $_POST['supprimer'] !== $sup) { 
                     $erreur = "<p id='erreur'>Vous vous êtes tromper dans l'écriture de 'SUPPRIMER' dans le champ de texte</p>";
@@ -24,7 +24,7 @@ require_once('config.php');
                 }
             }
         } else {
-            header('Location: accueil.php');
+            header('Location: ../visiteur/accueil.php');
         }
         ?> 
         <?php

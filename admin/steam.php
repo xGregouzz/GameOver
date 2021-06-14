@@ -25,7 +25,7 @@
 </style>
 <body>
 <?php
-    require_once 'config.php';
+    require_once '../config.php';
 ?>
 <fieldset>
 <header id="header">
@@ -48,7 +48,7 @@
             </ul>
         </section>
     </fieldset>
-    <link href="categories.css" rel="stylesheet">
+    <link href="../CSS/categories.css" rel="stylesheet">
     <nav class="menu">
 		<section class="categorie">
 			<h3>PlayStation</h3>

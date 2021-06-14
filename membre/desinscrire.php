@@ -9,7 +9,7 @@ require_once('../config.php');
     <body> 
         <?php
         $sup = "SUPPRIMER";
-        if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
+        if (isset($_SESSION['client']) AND !empty($_SESSION['client'])) {
             if (isset($_SESSION['id'])) {
                 $req = $connect->query('SELECT * FROM utilisateurs WHERE id = '.$_SESSION['id']);
                 $utilisateur = $req->fetch();

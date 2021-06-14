@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>GameOver</title>
@@ -41,8 +41,7 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-                <li><a href="accueil_admin.php">Accueil</a></li>
-                <li><a href="ajouter_article.php">Ajouter un article</a></li>
+                <li><a href="accueil_membre.php">Accueil</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
             </ul>
@@ -89,7 +88,7 @@
 </br>
 <div class="container">
     <?php
-        $req = $connect->query('SELECT * FROM articles WHERE `type` = "ps5"');
+        $req = $connect->query('SELECT * FROM articles WHERE `type` = "nintendo3DS"');
         $articles = $req->fetchAll();
 
         foreach ($articles as $article): ?>

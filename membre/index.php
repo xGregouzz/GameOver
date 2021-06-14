@@ -50,20 +50,11 @@ require_once '../config.php';
 			case "desinscrire.php":
 				$page ="desinscrire.php"; 
 				break;
-			case "modifier_article.php":
-				$page ="modifier_article.php"; 
-				break;
-			case "supprimer_article.php":
-				$page ="supprimer_article.php"; 
-				break;
 			case "supprimer_commandes.php":
 				$page ="supprimer_commandes.php"; 
 				break;
-			case "unique_article.php":
-				$page ="unique_article.php"; 
-				break;
 			default: 
-				$page ="accueil_admin.php";
+				$page ="accueil_membre.php";
 		}
 	} else {
 		$page = "accueil_admin.php";

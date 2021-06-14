@@ -1,5 +1,5 @@
 <?php
-	require 'config.php';
+	require '../config.php';
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
@@ -27,11 +27,11 @@
 					if($mdp == $data['mdp'] AND $data['etat'] == 'client') {
 						$_SESSION['client'] = $data['nom'];
 						$_SESSION['id'] = $data['id'];
-						header('Location: accueil_membre.php');
+						header('Location: ../membre/accueil_membre.php');
 					} else if ($mdp == $data['mdp'] AND $data['etat'] == 'admin') {
 						$_SESSION['admin'] = $data['nom'];
 						$_SESSION['id'] = $data['id'];
-						header('Location: admin/accueil_admin.php');
+						header('Location: ../admin/accueil_admin.php');
 					} else {
 						$errMsg = "Le mot de passe ou l'email est incorrect.";
 					}

@@ -41,10 +41,9 @@
         <nav class="action">
         <section class="categorie">
             <ul>
-                <li><a href="accueil_admin.php">Accueil</a></li>
-                <li><a href="ajouter_article.php">Ajouter un article</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-                <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
+                <li><a href="accueil.php">Accueil</a></li>
+                <li><a href="login.php">Connexion</a></li>
+                <li><a href="register.php">Inscription</a></li>
             </ul>
         </section>
     </fieldset>
@@ -89,7 +88,7 @@
 </br>
 <div class="container">
     <?php
-        $req = $connect->query('SELECT * FROM articles WHERE `type` = "ps5"');
+        $req = $connect->query('SELECT * FROM articles WHERE `type` = "Steam"');
         $articles = $req->fetchAll();
 
         foreach ($articles as $article): ?>
