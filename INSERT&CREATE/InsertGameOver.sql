@@ -16,5 +16,17 @@ INSERT INTO `articles` (`id`, `nom`, `plateforme`, `type`, `genre`, `description
 
 DELETE FROM utilisateurs;
 INSERT INTO `utilisateurs` (`id`, `etat`, `nom`, `prenom`, `mail`, `mdp`, `date_naissance`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin', '2000-01-01'),
-(2, 'client', 'client', 'client', 'client@gmail.com', 'client', '2000-01-01');
+(1, 'admin', 'admin', 'admin', 'admin@gmail.com', 'Admin1234', '2000-01-01'),
+(2, 'client', 'client', 'client', 'client@gmail.com', 'Client1234', '2000-01-01');
+
+DELETE FROM commandes;
+INSERT INTO `commandes` (`id`, `utilisateurs`, `date_commande`) VALUES
+(1, '2', '2021-06-14');
+
+DELETE FROM lignes_commandes;
+INSERT INTO `lignes_commandes` (`id`, `commandes`, `articles`, `quantité`, `prix_facture`, `type_paiement`) VALUES
+(1, '1', '1', '2', '9.98', 'VISA'),
+(2, '1', '6', '1', '11.99', 'VISA'),
+(3, '1', '9', '5', '44.95', 'VISA');
+
+
