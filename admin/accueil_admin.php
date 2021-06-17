@@ -61,10 +61,9 @@
                 <li><a href="ajouter_article.php">Ajouter un article</a></li>
                 <li><a href="modifier_ligne_commande.php?id=<?= $_SESSION['id'] ?>">Modifier lignes commande</a></li>
                 <li><a href="afficher_ligne_commande.php?id=<?= $_SESSION['id'] ?>">Afficher ligne commande</a></li>
+                <li><a href="supprimer_commandes.php?id=<?= $_SESSION['id'] ?>">Supprimer Commandes</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
-                <li><a href="supprimer_commandes.php?id=<?= $_SESSION['id'] ?>">Supprimer Commandes</a></li>
-               
             </ul>
         </section>
     </fieldset>
