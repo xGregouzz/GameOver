@@ -17,8 +17,11 @@
         $t = 0;
         foreach ($cart['lineitems'] as $key => $item) {
             $qty = $item['quantity'];
-            $desc = $item['article']['livre'];
-            $price = $item['article']['livre'];
+            /*$desc = $item['article']['livre'];
+            $price = $item['article']['livre'];*/
+
+            $desc = $item['articles']['description'];
+            $price = $item['articles']['prix'];
             $total = $price * $qty;
             echo "<tr>";
                 echo "<td align='center'>$qty</td>";
@@ -34,6 +37,6 @@
     </tr>
 </table>
 <br>
-<a href="index.php?action=accueil_membre.php">Continuer le shopping</a>&nbsp
+<a href="index.php?accueil_membre.php">Continuer le shopping</a>&nbsp
 <a href="index.php?action=empty.php">Vider le panier</a>&nbsp
 <a href="index.php?action=checkout.php">Commander</a>

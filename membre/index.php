@@ -1,7 +1,11 @@
 <?php 	
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once '../config.php';
-	if (isset($_POST["action"])) {
-		switch ($_POST["action"]) {
+	if (isset($_GET["action"])) { 
+		switch ($_GET["action"]) {
 			case "playstation3.php":
 				$page ="playstation3.php"; 
 				break;
@@ -60,14 +64,14 @@ require_once '../config.php';
 			case 'cart.php':
 				$page = 'cart.php';
 				break;
-			case 'addToCart':
+			case 'addtocart': 
 				if (isset($_GET["id"])) {
 					include_once("cart.php");
 					addToCart($_GET["id"], $connect);
 					$page = "panier.php";
 				} else {
-					$page = "accueil_membre.php";
-				}
+					$page = "stock.php";
+				} 
 				break;
 			case 'checkout.php':
 				$page = "checkout.php";
@@ -99,14 +103,14 @@ require_once '../config.php';
 				} else {    
 					$page = "checkout.php";
 					break;
-				}   
+				}  
 	
 			default: 
-				$page ="accueil_membre.php";
+				$page ="accueil_admin.php";
 		}
 	} else {
 		$page = "accueil_admin.php";
-	}	
+	}
 
 	include($page);
 ?>

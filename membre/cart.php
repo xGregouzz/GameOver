@@ -61,6 +61,7 @@
 		$cart =& findcart();
 		foreach ($cart['lineitems'] as $key => $value) {
 			if ($value['articles']['id'] == $articles['id']) {
+			//if ($value['articles']['id'] == $articles) {
 				$cart['lineitems'][$key]['quantity'] += 1;
 				return;
 			}
@@ -69,15 +70,18 @@
 	}
 
 	/*
-		Ajoute  livre au panier. La structure d'un livre est définie dans book.php.
+		Ajoute  un article au panier. La structure d'un article est définie dans book.php
 		Si le livre est déjà présent dans le panier alors nous augmentons de un la quantité.
 		entrées: 	$bookid le numéro d'identifiant du  livre à ajouter au panier.
 		sorties: 	aucune
 	*/
 
-	function addToCart($articlesId, $db) {
-		include_once("articles.php");
-		$articles = findArticles($articlesId, $db);
+	function addToCart($articlesId, $connect) {
+		//echo $articlesId; die;
+		//include_once("articles.php");
+		//$articles = findArticles($articlesId, $connect);
+		include_once("fonction_affichage.php");
+		$articles = getArticle($connect,1, $articlesId);
 		addArticlesToCart($articles);
 	}
 
@@ -91,7 +95,7 @@
 		$total = 0;
 		$cart = findcart();
 		foreach ($cart['lineitems'] as $key => $item) {
-			$total += $item['articles']['price'] * $item['quantity'];
+			$total += $item['articles']['prix'] * $item['quantity'];
 		}
 		return $total;
 	}
