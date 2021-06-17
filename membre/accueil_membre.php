@@ -57,11 +57,15 @@
                 </br>
                 </br>
                 <li><a href="accueil_membre.php">Accueil</a></li>
-                <li><a href="modifier_profil.php">Modifier Profil</a></li>
+                <li><a href="modifier_profil.php?id=<?= $_SESSION['id']?>">Modifier Profil</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
+<<<<<<< HEAD
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
                 <li><a href="index.php?action=panier.php">Voir mon panier</a></li>
 
+=======
+                <li><a href="desinscrire.php?id=<?= $_SESSION['id']?>">Désinscription</a></li>
+>>>>>>> d7d9c40ff44006b0012fcc02d52258ed2fa8ba68
             </ul>
         </section>
     </fieldset>
