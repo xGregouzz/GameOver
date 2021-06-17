@@ -63,11 +63,8 @@
                 <li><a href="afficher_ligne_commande.php?id=<?= $_SESSION['id'] ?>">Afficher ligne commande</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
-<<<<<<< HEAD
                 <li><a href="supprimer_commandes.php?id=<?= $_SESSION['id'] ?>">Supprimer Commandes</a></li>
-=======
                
->>>>>>> d7d9c40ff44006b0012fcc02d52258ed2fa8ba68
             </ul>
         </section>
     </fieldset>
