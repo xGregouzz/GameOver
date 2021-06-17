@@ -37,6 +37,6 @@
     </tr>
 </table>
 <br>
-<a href="index.php?accueil_membre.php">Continuer le shopping</a>&nbsp
+<a href="accueil_membre.php">Continuer le shopping</a>&nbsp
 <a href="index.php?action=empty.php">Vider le panier</a>&nbsp
 <a href="index.php?action=checkout.php">Commander</a>
