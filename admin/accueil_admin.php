@@ -61,6 +61,7 @@
                 <li><a href="ajouter_article.php">Ajouter un article</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
+                <li><a href="supprimer_commandes.php?id=<?= $_SESSION['id'] ?>">Supprimer Commandes</a></li>
             </ul>
         </section>
     </fieldset>
