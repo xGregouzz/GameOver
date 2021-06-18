@@ -1,5 +1,4 @@
 <?php 
-
 require_once('../config.php');
 require_once('modifier_profil2.php');
         $req = $connect->prepare('SELECT * FROM utilisateurs WHERE id = '.$_SESSION['id']);
@@ -8,6 +7,7 @@ require_once('modifier_profil2.php');
          ));
         $user = $req->fetch(PDO::FETCH_ASSOC);
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,7 @@ require_once('modifier_profil2.php');
 <body>
 <form action="modifier_profil2.php" method="post">
 
-    <p> E-mail : <div class="form-group"><input type="text" class="form-control" required="required" name="E-mail" value="<?php echo $user['mail']; ?>" /></div></p>
+    <p> E-mail : <div class="form-group"><input type="text" class="form-control" required="required" name="E-mail" value="<?php echo $user['email']; ?>" /></div></p>
     <p> Nom : <div class="form-group"><input type="text" class="form-control" required="required" name="Nom" value="<?php echo $user['nom']; ?>" /></div></p>
     <p> Prenom : <div class="form-group"><input type="text" class="form-control" required="required" name="Prenom" value="<?php echo $user['prenom']; ?>" /></div></p>
     <p> Mot de passe : <div class="form-group"><input type="password" class="form-control" required="required" name="password" value="" /></div></p>

@@ -1,24 +1,23 @@
 <?php 
-          require_once('../config.php');      
-          if (isset($_POST) AND !empty($_POST)) {
+  require_once('../config.php');      
+  if (isset($_POST) AND !empty($_POST)) {
 
-            if (!empty($_POST['E-mail']) AND !empty($_POST['Nom']) AND !empty($_POST['Prenom']) AND !empty($_POST['password'])) {
-          function insertutilisateurs($connect) {
-          $id = $_SESSION['id'];
-          $insertion = array(
-              "nom" => $_POST['Nom'],
-              "prenom" => $_POST['Prenom'],
-              "mail" => $_POST['E-mail'],
-              "mdp" => $_POST['password'],
-            );
-          $sql = "UPDATE utilisateurs
-            SET mail = :mail, mdp = :mdp, nom = :nom, prenom = :prenom
-            WHERE  id = $id ";
-  
+    if (!empty($_POST['E-mail']) AND !empty($_POST['Nom']) AND !empty($_POST['Prenom']) AND !empty($_POST['password'])) {
+  function insertutilisateurs($connect) {
+    $id = $_SESSION['id'];
+    $insertion = array(
+        "nom" => $_POST['Nom'],
+        "prenom" => $_POST['Prenom'],
+        "email" => $_POST['E-mail'],
+        "password" => $_POST['password'],
+      );
+    $sql = "UPDATE utilisateurs
+      SET email = :email, password = :password, nom = :nom, prenom = :prenom
+      WHERE  id = $id ";
+
     $req = $connect->prepare($sql);
     $req->execute($insertion);
     }
-
 ?>
 
 
@@ -26,7 +25,7 @@
 
 function recupemail($connect){
     $pseudo = htmlspecialchars($_SESSION["id"]);
-      $sql = "SELECT mail FROM utilisateurs WHERE id =?";
+      $sql = "SELECT email FROM utilisateurs WHERE id =?";
      $sth = $connect->prepare($sql);
     $sth->execute(array($pseudo));
     $resultat = $sth->fetch();
@@ -50,7 +49,7 @@ function recupnom($connect){
   }
 function recuppass($connect){
   $pseudo = htmlspecialchars($_SESSION["id"]);
-    $sql = "SELECT mdp FROM utilisateurs WHERE id =?";
+    $sql = "SELECT password FROM utilisateurs WHERE id =?";
   $sth = $connect->prepare($sql);
     $sth->execute(array($pseudo));
     $resultat = $sth->fetch();
@@ -76,7 +75,7 @@ function verifPseudo($connect){
 function verifMail($connect){
   $mail = $_POST["E-mail"];
   $id = recupid($connect);
-  $stmt = $connect->prepare("SELECT * FROM utilisateurs WHERE mail=? and id != $id");
+  $stmt = $connect->prepare("SELECT * FROM utilisateurs WHERE email=? and id != $id");
   $stmt->execute([$mail]); 
   $mail = $stmt->fetch();
   if ($mail) {
@@ -90,7 +89,7 @@ function verifMail($connect){
 $mail = recupemail($connect);
 $nom = recupnom($connect);
 $prenom = recupprenom($connect);
-$mdp = recuppass($connect);
+$password = recuppass($connect);
 insertutilisateurs($connect);
 header('Location: accueil_membre.php');
       }

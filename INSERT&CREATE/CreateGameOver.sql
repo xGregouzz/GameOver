@@ -55,7 +55,7 @@ ENGINE = InnoDB;
 -- Table `GameOver`.`commandes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `GameOver`.`commandes` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `utilisateurs` INT(11) NOT NULL,
   `date_commande` DATE NOT NULL,
   `type_paiement` VARCHAR(50) NOT NULL,

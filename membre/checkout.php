@@ -3,18 +3,28 @@
 <fieldset>
 <legend><U><h2>Entrez vos coordonées</h2></U></legend>
 <br>
-<form action="index.php?action=saveorder.php" method="POST">
-   <b> Nom </b> &nbsp<input type="text" name="nom"><br>
+<?php
+    require_once('../config.php')
+?>
+
+<?php
+    if (isset($_SESSION['flash']['error_mail'])) {
+        echo "<div class='error_mail'>".$_SESSION['flash']['error_mail'].'</div>';
+        echo "</br>";
+    } else if (isset($_SESSION['flash']['error_champs'])) {
+        echo "<div class='error_champs'>".$_SESSION['flash']['error_champs'].'</div>';
+        echo "</br>";
+    }
+?>
+
+<form action="saveorder.php?id=<?= $_SESSION['id'] ?>" method="POST">
+    <b> Email </b> &nbsp <input type="text" name="email"> <br>
     <br>
-    <b> Mail </b> &nbsp <input type="text" name="mail"> <br>
-    <br>
-    <b> Adresse </b> &nbsp <input type="text" name="adresse"><br>
-    <br>
-    <b> Payez par </b> &nbsp <select name="mp">
-        <option value="visa">VISA</option>
-        <option value="mc">MASTER CARD</option>
-        <option value="amex">AMEX</option>
-        <option value="paypal">PAYPAL</option>
+    <b> Payez par </b> &nbsp <select name="type_paiement">
+        <option value="VISA">VISA</option>
+        <option value="MASTER CARD">MASTER CARD</option>
+        <option value="AMEX">AMEX</option>
+        <option value="PAYPAL">PAYPAL</option>
     </select><br>
     <br>
     <input type="submit" value="Commander">

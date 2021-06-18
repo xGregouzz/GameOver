@@ -47,9 +47,9 @@
         if($row == 0){ 
             if($age > 18) { //On verifie que l'utilisateur est majeur
                 if(strlen($nom) <= 100){ // On verifie que la longueur du nom <= 100
-                    if(in_array($nom, $caractere_speciaux) == true){ //On verifie que le nom ne comporte pas de caracteres speciaux
+                    if(in_array($nom, $caractere_speciaux) == false){ //On verifie que le nom ne comporte pas de caracteres speciaux
                         if(strlen($prenom) <= 100){ // On verifie que la longueur du prenom <= 100
-                            if(in_array($prenom, $caractere_speciaux) == true){ //On verifie que le prenom ne comporte pas de caracteres speciaux
+                            if(in_array($prenom, $caractere_speciaux) == false){ //On verifie que le prenom ne comporte pas de caracteres speciaux
                                 if(strlen($email) <= 100){ // On verifie que la longueur du mail <= 100
                                     if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si l'email est de la bonne forme
                                         if($password === $password_retype){ // si les deux mdp saisis sont bon
