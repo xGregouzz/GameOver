@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `GameOver`.`commandes` (
   `id` INT(11) NOT NULL,
   `utilisateurs` INT(11) NOT NULL,
   `date_commande` DATE NOT NULL,
+  `type_paiement` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -71,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `GameOver`.`lignes_commandes` (
   `articles` INT(11) NOT NULL,
   `quantité` INT(11) NOT NULL,
   `prix_facture` DECIMAL(5,2) NOT NULL,
-  `type_paiement` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

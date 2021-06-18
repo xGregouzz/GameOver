@@ -20,13 +20,13 @@ INSERT INTO `utilisateurs` (`id`, `etat`, `nom`, `prenom`, `date_naissance`, `em
 (2, 'client', 'client', 'client', '2000-01-01', 'client@gmail.com', 'Client1234');
 
 DELETE FROM commandes;
-INSERT INTO `commandes` (`id`, `utilisateurs`, `date_commande`) VALUES
-(1, '2', '2021-06-14');
+INSERT INTO `commandes` (`id`, `utilisateurs`, `date_commande`, `type_paiement`) VALUES
+(1, '2', '2021-06-14', 'VISA');
 
 DELETE FROM lignes_commandes;
 INSERT INTO `lignes_commandes` (`id`, `commandes`, `articles`, `quantité`, `prix_facture`, `type_paiement`) VALUES
-(1, '1', '1', '2', '9.98', 'VISA'),
-(2, '1', '6', '1', '11.99', 'VISA'),
-(3, '1', '9', '5', '44.95', 'VISA');
+(1, '1', '1', '2', '9.98'),
+(2, '1', '6', '1', '11.99'),
+(3, '1', '9', '5', '44.95');
 
 
