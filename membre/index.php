@@ -88,7 +88,7 @@ require_once '../config.php';
 			case "empty.php":
 				include_once("./cart.php");
 				emptyCart();
-				$page = "showcart.php";
+				$page = "panier.php";
 				break;
 			case "saveorder":
 				if (isset($_POST["nom"]) AND isset($_POST["mail"]) AND isset($_POST["adresse"]) AND isset($_POST["mp"])) {
