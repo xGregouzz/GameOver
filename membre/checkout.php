@@ -3,7 +3,7 @@
 <fieldset>
 <legend><U><h2>Entrez vos coordonées</h2></U></legend>
 <br>
-<form action="index.php?action=saveorder" method="POST">
+<form action="index.php?action=saveorder.php" method="POST">
    <b> Nom </b> &nbsp<input type="text" name="nom"><br>
     <br>
     <b> Mail </b> &nbsp <input type="text" name="mail"> <br>

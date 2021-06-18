@@ -90,21 +90,9 @@ require_once '../config.php';
 				emptyCart();
 				$page = "panier.php";
 				break;
-			case "saveorder":
-				if (isset($_POST["nom"]) AND isset($_POST["mail"]) AND isset($_POST["adresse"]) AND isset($_POST["mp"])) {
-					include_once("config.php");
-					$nom = $_POST['nom'];
-					$mail = $_POST['mail'];
-					$adr = $_POST['adresse'];
-					$mp = $_POST['mp'];
-					checkout($nom, $mail, $adr, $mp, $connect);
-					$page = "saveorder.php";
-					break;
-				} else {    
-					$page = "checkout.php";
-					break;
-				}  
-	
+			case "saveorder.php":
+				$page = "saveorder.php";
+				break;
 			default: 
 				$page ="accueil_admin.php";
 		}
