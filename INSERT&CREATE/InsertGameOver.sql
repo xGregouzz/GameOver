@@ -24,7 +24,7 @@ INSERT INTO `commandes` (`id`, `utilisateurs`, `date_commande`, `type_paiement`)
 (1, '2', '2021-06-14', 'VISA');
 
 DELETE FROM lignes_commandes;
-INSERT INTO `lignes_commandes` (`id`, `commandes`, `articles`, `quantité`, `prix_facture`, `type_paiement`) VALUES
+INSERT INTO `lignes_commandes` (`id`, `commandes`, `articles`, `quantité`, `prix_facture`) VALUES
 (1, '1', '1', '2', '9.98'),
 (2, '1', '6', '1', '11.99'),
 (3, '1', '9', '5', '44.95');
