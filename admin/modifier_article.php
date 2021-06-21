@@ -132,7 +132,7 @@
         ?>
         <form method="post">
             <h4>Le nom :</h4>
-            <textarea id="nom" name="nom" rows="1" cols="30" value="<?= $articles['nom'] ?>"></textarea>
+            <textarea id="nom" name="nom" rows="1" cols="30" value=""><?= $articles['nom'] ?></textarea>
             <h4>La plateforme :</h4>
             <input list="plateforme" type="text" id="choix_plateforme" name="plateforme" value="<?= $articles['plateforme'] ?>">
             <datalist id="plateforme">
@@ -173,7 +173,7 @@
                 <option value="sport">
             </datalist>
             <h4>La description :</h4>
-            <textarea id="description" name="description" rows="11" cols="40" value="<?= $articles['description'] ?>"></textarea>
+            <textarea id="description" name="description" rows="11" cols="40" value=""><?= $articles['description'] ?></textarea>
             <h4>Le pegi :</h4>
             <input list="pegi" type="text" id="choix_pegi" name="pegi" value="<?= $articles['pegi'] ?>">
             <datalist id="pegi">

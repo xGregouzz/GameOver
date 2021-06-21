@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>GameOver</title>
@@ -58,8 +58,7 @@
                 'articles' => $_POST['articles'],
                 'quantité' => $_POST['quantité'],
                 'prix_facture' => $_POST['prix_facture'],
-                'id' => $_GET['id'],
-                
+                'id' => $_GET['id']
             ]);
             $_SESSION['flash']['success'] = 'A posté !';
         } else {
@@ -142,13 +141,13 @@
         ?>
         <form method="post">
             <h4>Le numéro de commande :</h4>
-            <input id="commandes" type="text" name="commandes" rows="1" cols="30" value="<?= $commandes['commandes'] ?>">
+            <input id="commandes" type="number" name="commandes" rows="1" cols="30" value="<?= $commandes['commandes'] ?>">
             <h4>Le numéro d'article :</h4>
-            <input id="articles" type="text" name="articles" rows="1" cols="30" value="<?= $commandes['articles'] ?>">
+            <input id="articles" type="number" name="articles" rows="1" cols="30" value="<?= $commandes['articles'] ?>">
             <h4>La quantitée :</h4>
-            <input id="quantité" type="text" name="quantité" rows="1" cols="30" value="<?= $commandes['quantité'] ?>">
+            <input id="quantité" type="number" name="quantité" rows="1" cols="30" value="<?= $commandes['quantité'] ?>">
             <h4>Le prix facture :</h4>
-            <input id="prix_facture" type="text" name="prix_facture" rows="1" cols="30" value="<?= $commandes['prix_facture'] ?>">
+            <input id="prix_facture" type="number" name="prix_facture" rows="1" cols="30" value="<?= $commandes['prix_facture'] ?>">
             </br>
             </br>
             </br>
