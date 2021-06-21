@@ -25,8 +25,8 @@
 
 function recupemail($connect){
     $pseudo = htmlspecialchars($_SESSION["id"]);
-      $sql = "SELECT email FROM utilisateurs WHERE id =?";
-     $sth = $connect->prepare($sql);
+    $sql = "SELECT email FROM utilisateurs WHERE id =?";
+    $sth = $connect->prepare($sql);
     $sth->execute(array($pseudo));
     $resultat = $sth->fetch();
     return $resultat[0];
@@ -47,6 +47,7 @@ function recupnom($connect){
     $resultat = $sth->fetch();
     return $resultat[0];
   }
+
 function recuppass($connect){
   $pseudo = htmlspecialchars($_SESSION["id"]);
     $sql = "SELECT password FROM utilisateurs WHERE id =?";
@@ -56,36 +57,6 @@ function recuppass($connect){
     return $resultat[0];
   }
 
-
-
-function verifPseudo($connect){
-  $pseudo = $_POST["Pseudo"];
-  $id = recupid($connect);
-  $stmt = $connect->prepare("SELECT * FROM utilisateurs WHERE id=? and id != $id");
-  $stmt->execute([$pseudo]); 
-  $pseudo = $stmt->fetch();
-  if ($pseudo) {
-    // le nom d'utilisateur existe déjà
-    return false;
-  } else {
-      // le nom d'utilisateur n'existe pas
-    return true;
-  }
-}
-function verifMail($connect){
-  $mail = $_POST["E-mail"];
-  $id = recupid($connect);
-  $stmt = $connect->prepare("SELECT * FROM utilisateurs WHERE email=? and id != $id");
-  $stmt->execute([$mail]); 
-  $mail = $stmt->fetch();
-  if ($mail) {
-    // le nom d'utilisateur existe déjà
-    return false;
-  } else {
-    // le nom d'utilisateur n'existe pas
-    return true;
-  }
-}
 $mail = recupemail($connect);
 $nom = recupnom($connect);
 $prenom = recupprenom($connect);
