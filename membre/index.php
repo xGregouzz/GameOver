@@ -93,6 +93,9 @@ require_once '../config.php';
 			case "saveorder.php":
 				$page = "saveorder.php";
 				break;
+			case "minichat.php":
+				$page = "minichat.php";
+				break;
 			default: 
 				$page ="accueil_admin.php";
 		}

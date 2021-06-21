@@ -61,6 +61,8 @@
                 <li><a href="deconnexion.php">Déconnexion</a></li>
                 <li><a href="desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
                 <li><a href="index.php?action=panier.php">Voir mon panier</a></li>
+                <li><a href="../minichat.php">Chat</a></li>
+
             </ul>
         </section>
     </fieldset>

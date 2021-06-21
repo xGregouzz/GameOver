@@ -32,7 +32,10 @@
                     'type_paiement' => $_POST['type_paiement'],
                 ]);
                 echo '<center><h3>Merci pour la commande !!</h3></center>';
-                //button
+                echo '<a href="accueil_membre.php">Cliquer ici pour revenir au site du commerçant.</a>';
+                
+            //button
+
             } else {
             $_SESSION['flash']['error_mail'] = 'Votre email ne correspond pas';
             header('location: checkout.php');
@@ -40,7 +43,8 @@
         } else {
             $_SESSION['flash']['error_champs'] = 'Champs manquants';
             header('location: checkout.php');
+            
         }
-    ?>  
+?>  
 </body>
 </html>
