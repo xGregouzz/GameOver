@@ -14,7 +14,7 @@ require_once('modifier_profil2.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier</title>
-    <h1>Informations personelles</h1>
+    <h1>Informations personnelles</h1>
 </head>
 <body>
 <form action="modifier_profil2.php" method="post">

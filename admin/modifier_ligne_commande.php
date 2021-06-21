@@ -51,14 +51,13 @@
     }
 
     if (isset($_POST) AND !empty($_POST)) {
-        if (!empty($_POST['commandes']) AND !empty($_POST['articles']) AND !empty($_POST['quantité']) AND !empty($_POST['prix_facture']) AND !empty($_POST['type_paiement'])) {
-            $req = $connect->prepare('UPDATE lignes_commandes SET commandes = :commandes, articles = :articles, quantité = :quantité, prix_facture = :prix_facture, type_paiement = :type_paiement WHERE id = :id');
+        if (!empty($_POST['commandes']) AND !empty($_POST['articles']) AND !empty($_POST['quantité']) AND !empty($_POST['prix_facture'])) {
+            $req = $connect->prepare('UPDATE lignes_commandes SET commandes = :commandes, articles = :articles, quantité = :quantité, prix_facture = :prix_facture WHERE id = :id');
             $req->execute([
                 'commandes' => $_POST['commandes'],
                 'articles' => $_POST['articles'],
                 'quantité' => $_POST['quantité'],
                 'prix_facture' => $_POST['prix_facture'],
-                'type_paiement' => $_POST['type_paiement'],
                 'id' => $_GET['id'],
                 
             ]);
@@ -144,20 +143,12 @@
         <form method="post">
             <h4>Le numéro de commande :</h4>
             <input id="commandes" type="text" name="commandes" rows="1" cols="30" value="<?= $commandes['commandes'] ?>">
-            <h4>L'articles :</h4>
+            <h4>Le numéro d'article :</h4>
             <input id="articles" type="text" name="articles" rows="1" cols="30" value="<?= $commandes['articles'] ?>">
             <h4>La quantitée :</h4>
             <input id="quantité" type="text" name="quantité" rows="1" cols="30" value="<?= $commandes['quantité'] ?>">
             <h4>Le prix facture :</h4>
             <input id="prix_facture" type="text" name="prix_facture" rows="1" cols="30" value="<?= $commandes['prix_facture'] ?>">
-            <h4>Le type de paiement :</h4>
-            <input list="type_paiement" type="text" id="type_paiement" name="type_paiement" value="<?= $commandes['type_paiement'] ?>">
-            <datalist id="type_paiement">
-                <option value="VISA">
-                <option value="MASTERCARD">
-                <option value="AMEX">
-                <option value="PAYPAL">
-            </datalist>
             </br>
             </br>
             </br>

@@ -2,7 +2,7 @@
   require_once('../config.php');      
   if (isset($_POST) AND !empty($_POST)) {
 
-    if (!empty($_POST['E-mail']) AND !empty($_POST['Nom']) AND !empty($_POST['Prenom']) AND !empty($_POST['password'])) {
+  if (!empty($_POST['E-mail']) AND !empty($_POST['Nom']) AND !empty($_POST['Prenom']) AND !empty($_POST['password'])) {
   function insertutilisateurs($connect) {
     $id = $_SESSION['id'];
     $insertion = array(
