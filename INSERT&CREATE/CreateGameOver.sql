@@ -79,7 +79,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `GameOver`.`minichat`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GameOver`.`lignes_commandes` (
+CREATE TABLE IF NOT EXISTS `GameOver`.`minichat` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `pseudo` VARCHAR(255),
   `message` VARCHAR(255),
