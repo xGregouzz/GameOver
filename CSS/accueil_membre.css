@@ -1,0 +1,64 @@
+.menu {
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.menu .categorie {
+	background: rgb(65, 206, 84);
+	position: relative;  /* pour être la «racine» du sous-menu en absolute */
+}
+
+.menu .categorie ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: 0;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;  /* pour avoir la même largeur que la «racine» */
+}
+
+.menu .categorie:hover ul {
+	max-height: 50em;
+	transition: 1s;
+}
+
+.menu h3,
+.menu a {
+	display: block;
+	margin: 0;
+	padding: .5em 1.5em;
+	font-size: inherit;
+	color: black;
+	background-color: rgb(65, 206, 84);
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.menu .categorie:hover h3 {
+	color: white;
+	background-color: rgb(65, 206, 84);
+}
+
+.menu a:hover {
+	color: white;
+	background-color: rgb(65, 206, 84);
+}
+
+.links {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 15px;
+	background-color: rgb(65, 206, 84);
+	border: 1px solid black;
+}
+
+.topHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 25px;
+	margin-right: 25px;
+}
