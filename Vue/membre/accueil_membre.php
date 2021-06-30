@@ -33,7 +33,7 @@
                         <li><a href="accueil_membre.php">Accueil</a></li>
                         <li><a href="modifier_profil.php">Modifier Profil</a></li>
                         <li><a href="../../index.php?action=panier.php">Voir mon panier</a></li>
-                        <li><a href="../../index.php?action=Vue/membre/historique.php">Historique d'Achat</a></li>
+                        <li><a href="historique.php">Historique d'Achat</a></li>
                         <li><a href="../../index.php?action=Vue/membre/minichat.php">Chat</a></li>
                         <li><a href="../../Controleur/deconnexion.php">Déconnexion</a></li>
                         <li><a href="desinscrire.php">Désinscription</a></li>
