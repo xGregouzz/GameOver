@@ -23,7 +23,8 @@
                     <ul>
                         <li><a href="Vue/admin/accueil_admin.php">Accueil</a></li>
                         <li><a href="Vue/admin/ajouter_article.php">Ajouter un article</a></li>
-                        <li><a href="Vue/admin/selectionner_commande.php">Modifier lignes commande</a></>
+                        <li><a href="Vue/admin/selectionner_commande.php">Modifier Commande</a></>
+                        <li><a href="Vue/admin/selectionner_ligne_commande.php">Modifier Ligne Commande</a></>
                         <li><a href="Controleur/deconnexion.php">Deconnexion</a></li>
                         <li><a href="Vue/admin/desinscrire.php">Désinscription</a></li>
                     </ul>

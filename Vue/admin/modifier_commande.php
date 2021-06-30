@@ -6,17 +6,19 @@
     <title>GameOver</title>
 </head>
 <body>
-<?php
-    session_start();
-?>
-<fieldset>
+    <?php
+        session_start();
+        require_once('../../Controleur/modifier_commande.php');
+        $commandes = getCommandes($db,1, $_GET['id']);
+        $id = $_GET['id'];
+    ?>
+    <fieldset>
     <header id="header">
         <div class="topHeader">
             <div>
                 <img width="200px" src='../../img/LogoGameOver.png' alt="">
             </div>
             <center>
-            
                 <fieldset>
                     <h1>GameOver</h1>
                     <p>Bienvenue <?php echo ucfirst ($_SESSION['admin']) ?></p>
@@ -28,7 +30,7 @@
                     <li><a href="accueil_admin.php">Accueil</a></li>
                     <li><a href="ajouter_article.php">Ajouter un article</a></li>
                     <li><a href="selectionner_commande.php">Modifier Commande</a></li>
-                    <li><a href="selectionner_ligne_commande.php">Modifier Ligne Commande</a></li>
+                    <li><a href="selectionner_ligne_commande.php">Modifier Ligne Commande</a></>
                     <li><a href="../../Controleur/deconnexion.php">Deconnexion</a></li>
                     <li><a href="desinscrire.php">Désinscription</a></li>
                 </ul>
@@ -72,15 +74,39 @@
             </section>
         </nav>
     </header>
-    <br>
-    <center>
-        <p>Marquez l'ID de la commande a modifié</p>
-        <form action='../../Controleur/selectionner_commande.php' method="POST"> 
-                <input type="number" id="id" name="id" />
-                <br>
-                <br>
-                <button>Confirmer</button>
-        </form> 
-    </center>
-    </body> 
+    <div class="container">
+        <center>
+            <h3>Modifier Commande <?= "Id : " . ' "' .$id. '"' ?></h3>
+            <h4>Ne touchez pas le contenu si il n'y a aucun changement</h4>
+            <?php
+                if (!empty($_POST)) {
+                    include_once '../../Controleur/modifier_commande.php';
+                }
+            ?>
+            <form method="post">
+                <h4>L'ID du client :</h4>
+                <input id="utilisateur" type="number" name="utilisateur" rows="1" cols="30" value="<?= $commandes['utilisateurs'] ?>">
+                <h4>La date de commande :</h4>
+                <input id="date_commande" type="date" name="date_commande" rows="1" cols="30" value="<?= $commandes['date_commande'] ?>">
+                <h4>Le type de paiement :</h4>
+                <input list="type" type="text" id="type_paiement" name="type_paiement" value="<?= $commandes['type_paiement'] ?>">
+                <datalist id="type">
+                    <option value="VISA">
+                    <option value="AMEX">
+                    <option value="MASTERCARD">
+                    <option value="PAYPAL">
+                </datalist>
+                </br>
+                </br>
+                </br>
+                <button>Modifier</button>
+            </form>
+            <br>
+            <button type="button" class="button"><a href="../../Controleur/supprimer_commande.php?id=<?= $id ?>">Supprimer la Commande</a></button>
+            <br>
+            <br>
+            <br>
+        </center>
+    </div>
+</body>
 </html>

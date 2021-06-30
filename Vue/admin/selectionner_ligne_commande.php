@@ -74,8 +74,8 @@
     </header>
     <br>
     <center>
-        <p>Marquez l'ID de la commande a modifié</p>
-        <form action='../../Controleur/selectionner_commande.php' method="POST"> 
+        <p>Marquez l'ID de la ligne commande a modifié</p>
+        <form action='../../Controleur/selectionner_ligne_commande.php' method="POST"> 
                 <input type="number" id="id" name="id" />
                 <br>
                 <br>
