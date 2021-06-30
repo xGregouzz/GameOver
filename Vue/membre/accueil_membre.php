@@ -31,7 +31,7 @@
                         </br>
                         </br>         
                         <li><a href="accueil_membre.php">Accueil</a></li>
-                        <li><a href="../../index.php?action=Vue/membre/modifier_profil.php?id=<?= $_SESSION['id']?>">Modifier Profil</a></li>
+                        <li><a href="modifier_profil.php">Modifier Profil</a></li>
                         <li><a href="../../index.php?action=panier.php">Voir mon panier</a></li>
                         <li><a href="../../index.php?action=Vue/membre/historique.php">Historique d'Achat</a></li>
                         <li><a href="../../index.php?action=Vue/membre/minichat.php">Chat</a></li>
