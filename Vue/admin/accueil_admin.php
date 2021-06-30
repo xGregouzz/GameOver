@@ -32,7 +32,7 @@
                         </br>         
                         <li><a href="accueil_admin.php">Accueil</a></li>
                         <li><a href="ajouter_article.php">Ajouter un article</a></li>
-                        <li><a href="modifier_ligne_commande.php">Modifier lignes commande</a></li>
+                        <li><a href="selectionner_commande.php">Modifier lignes commande</a></li>
                         <li><a href="../../Controleur/deconnexion.php">Deconnexion</a></li>
                         <li><a href="desinscrire.php">Désinscription</a></li>
                     </ul>
