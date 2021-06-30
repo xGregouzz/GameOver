@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="CSS/accueil.css" rel="stylesheet">
+    <link href="CSS/accueil_membre.css" rel="stylesheet">
     <title>GameOver</title>
 </head>
 <body>
@@ -22,12 +22,12 @@
         <section class="categorie">
             <ul>
                 <li><a href="Vue/membre/accueil_membre.php">Accueil</a></li>
-                <li><a href="index.php?action=Vue/membre/modifier_profil.php?id=<?= $_SESSION['id']?>">Modifier Profil</a></li>
-                <li><a href="index.php?action=Vue/membre/panier.php">Voir mon panier</a></li>
-                <li><a href="index.php?action=Vue/membre/historique.php">Historique d'Achat</a></li>
+                <li><a href="Vue/membre/modifier_profil.php?id=<?= $_SESSION['id']?>">Modifier Profil</a></li>
+                <li><a href="index.php?action=panier.php">Voir mon panier</a></li>
+                <li><a href="Vue/membre/historique.php">Historique d'Achat</a></li>
                 <li><a href="index.php?action=Vue/membre/minichat.php">Chat</a></li>
                 <li><a href="Controleur/deconnexion.php">Déconnexion</a></li>
-                <li><a href="index.php?action=Vue/membre/desinscrire.php?id=<?= $_SESSION['id'] ?>">Désinscription</a></li>
+                <li><a href="Vue/membre/desinscrire.php">Désinscription</a></li>
             </ul>
         </section>
     </fieldset>
@@ -84,7 +84,7 @@
             <td><p><?= $article['description'] ?></p></td>
         </tr>
         <tr>
-            <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
+            <td><a href="Vue/membre/afficher_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
         </tr>
     </table>
         </br>

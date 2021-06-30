@@ -84,7 +84,7 @@
             <td><p><?= $article['description'] ?></p></td>
         </tr>
         <tr>
-            <td><a href="unique_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
+            <td><a href="Vue/membre/afficher_article.php?id=<?= $article['id'] ?>">Voir l'article en entier</a></td>
         </tr>
     </table>
         </br>
