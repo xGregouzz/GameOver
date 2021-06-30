@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="accueil_admin.php">Accueil</a></li>
                     <li><a href="ajouter_article.php">Ajouter un article</a></li>
-                    <li><a href="modifier_ligne_commande.php">Modifier lignes commande</a></li>
+                    <li><a href="selectionner_commande.php">Modifier lignes commande</a></li>
                     <li><a href="../../Controleur/deconnexion.php">Deconnexion</a></li>
                     <li><a href="desinscrire.php">Désinscription</a></li>
                 </ul>
@@ -75,7 +75,7 @@
     </header>
     <div class="container">
         <center>
-            <h3>Modifier ligne commande <?= "Id : " . ' "' .$commandes['commandes']. '"' ?></h3>
+            <h3>Modifier ligne commande <?= "Id : " . ' "' .$id. '"' ?></h3>
             <h4>Ne touchez pas le contenu si il n'y a aucun changement</h4>
             <?php
                 if (!empty($_POST)) {

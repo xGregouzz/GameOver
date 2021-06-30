@@ -8,7 +8,6 @@
 <body>
 <?php
     session_start();
-    
 ?>
 <fieldset>
     <header id="header">
@@ -28,7 +27,7 @@
                 <ul>
                     <li><a href="accueil_admin.php">Accueil</a></li>
                     <li><a href="ajouter_article.php">Ajouter un article</a></li>
-                    <li><a href="selectionner_commande.php?id">Modifier lignes commande</a></li>
+                    <li><a href="selectionner_commande.php">Modifier lignes commande</a></li>
                     <li><a href="../../Controleur/deconnexion.php">Deconnexion</a></li>
                     <li><a href="desinscrire.php">Désinscription</a></li>
                 </ul>
@@ -73,9 +72,8 @@
         </nav>
     </header>
     <br>
-    <br>
-    <br>
     <center>
+        <p>Marquez l'ID de la ligne commande a modifié</p>
         <form action='../../Controleur/selectionner_commande.php' method="POST"> 
                 <input type="number" id="id" name="id" />
                 <br>

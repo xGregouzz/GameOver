@@ -5,7 +5,7 @@
     if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
         if (!empty($id)) {
             recupUser($db);
-            header('Location: modifier_ligne_commande.php?id='.$_GET['id']);
+            header('Location: ../Vue/admin/modifier_ligne_commande.php?id='.$id);
         } else {
             header('Location: selectionner_commande.php');
         }
