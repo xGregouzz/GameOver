@@ -23,8 +23,8 @@
     </center>
     <?php endforeach ?>
     <center>
-        <li><a href="../../Vue/membre/historique.php">Retour</a></li></br>
-        <li><a href="../../Vue/membre/accueil_membre.php">Menu principal</a></li></br></br>
+        <li><a href="historique.php">Retour</a></li></br>
+        <li><a href="accueil_membre.php">Menu principal</a></li></br></br>
     </center>
 </body>
 </html>
