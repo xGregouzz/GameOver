@@ -10,6 +10,7 @@
     session_start();
         require_once '../../Controleur/afficher_article.php';
         $articles = getArticle($db,1, $_GET['id']);
+        $id = $_GET['id'];
     ?>
     <fieldset>
         <header id="header">
@@ -106,8 +107,21 @@
             <h2>Prix : <?= ucfirst($articles['prix']) ?></h2>
             </fieldset>
         </center>
+        <?php
+         $likes = $db->prepare('SELECT id FROM likes WHERE id_article = ?');
+         $likes->execute(array($id)); 
+         $likes = $likes->rowCount();
+ 
+         $dislikes = $db->prepare('SELECT id FROM dislikes WHERE id_article = ?');
+         $dislikes->execute(array($id)); 
+         $dislikes = $dislikes->rowCount();
+        ?>
     </div>
     <br>
     <a href="../../index.php?action=addtocart&id=<?php echo $articles["id"] ?>">Ajouter au panier</a></td>
+    &nbsp;&nbsp;&nbsp;
+    <a style="text-decoration:none;" href="../../Modele/action.php?type=1&id=<?php echo $id ?>">👍</a> (<?= $likes ?>) <a style="text-decoration:none;" href="../../Modele/action.php?type=2&id=<?php echo $id ?>">👎</a> (<?= $dislikes ?>)
+    <br>
+    
 </body>
 </html>
