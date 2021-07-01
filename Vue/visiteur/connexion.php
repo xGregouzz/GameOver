@@ -22,7 +22,7 @@
                 <button type="submit" name="login" class="btn btn-primary btn-block">Connexion</button>
             </div>   
         </form>
-        <p class="text-center"><a href="inscription.php">Inscription</a></p>
+        <p class="text-center"><a href="index.php?action=Vue/visiteur/inscription.php">Inscription</a></p>
     </div>
     <style>
         .login-form {
