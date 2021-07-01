@@ -18,7 +18,7 @@
     <center>
         <br>
         <br>
-        <a href="../../Vue/membre/accueil_membre.php">Menu principal</a>
+        <a href="accueil_membre.php">Menu principal</a>
     </center>
 </body>
 </html>
