@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once('../../Modele/desinscrire.php');
     $sup = "SUPPRIMER";
     if (isset($_SESSION['admin']) AND !empty($_SESSION['admin'])) {
