@@ -50,7 +50,7 @@ if(isset($_GET['type'],$_GET['id']) AND !empty($_GET['type']) AND !empty($_GET['
                 $insert->execute(array($getid, $sessionid));
             }
         }
-        header('location: http://localhost/GameOver/Vue/membre/afficher_article.php?id='.$getid);
+        header('location: ../Vue/membre/afficher_article.php?id='.$getid);
     }else{
         exit('ERREUR fatale');
     }
