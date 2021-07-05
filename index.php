@@ -183,6 +183,10 @@
             case "checkout.php":
                 $page = "Vue/membre/checkout.php";
                 break;
+                
+            case "Vue/membre/minichat.php":
+                $page = "Vue/membre/minichat.php";
+                break;
             
             case "saveorder.php":
                 session_start();
