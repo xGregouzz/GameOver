@@ -77,6 +77,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `GameOver`.`minichat`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `GameOver`.`minichat` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `prenom` VARCHAR(50) NOT NULL,
+  `message` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `GameOver`.`likes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `GameOver`.`likes` (

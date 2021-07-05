@@ -30,7 +30,7 @@
                         <li><a href="ajouter_article.php">Ajouter un article</a></li>
                         <li><a href="selectionner_commande.php">Modifier Commande</a></>
                         <li><a href="selectionner_ligne_commande.php">Modifier Ligne Commande</a></li>
-                        <li><a href="deconnexion.php">Deconnexion</a></li>
+                        <li><a href="../../Controleur/deconnexion.php">Deconnexion</a></li>
                         <li><a href="desinscrire.php">Désinscription</a></li>
                     </ul>
                 </section>
