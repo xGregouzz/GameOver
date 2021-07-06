@@ -81,6 +81,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `GameOver`.`minichat` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `utilisateurs` INT(11) NOT NULL,
   `prenom` VARCHAR(50) NOT NULL,
   `message` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`))
