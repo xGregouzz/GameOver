@@ -48,8 +48,8 @@
 			<ul>
 				<li><a href="../../index.php?action=Vue/membre/playstation3.php">PlayStation 3</a></li>
 				<li><a href="../../index.php?action=Vue/membre/playstation4.php">PlayStation 4</a></li>
-				<li><a href="index.php?action=Vue/membre/playstation5.php">PlayStation 5</a></li>
-                <li><a href="index.php?action=Vue/membre/aboplay.php">Abonnement PlayStation</a></li>
+				<li><a href="../../index.php?action=Vue/membre/playstation5.php">PlayStation 5</a></li>
+                <li><a href="../../index.php?action=Vue/membre/aboplay.php">Abonnement PlayStation</a></li>
 			</ul>
 		</section>
 		<section class="categorie">
